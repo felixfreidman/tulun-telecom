@@ -1,30 +1,20 @@
+var recover_button = document.querySelector(".auth-form__recover");
+var confirm_button = document.querySelector(".auth-form__continue");
+var apply_form = document.querySelector(".form-apply-recover");
+var recover_form = document.querySelector(".form-recover-check");
+var return_form = document.querySelector(".form-return-login");
+recover_button.addEventListener("click", () => {
+    apply_form.classList.toggle("js--hidden");
+    recover_form.classList.toggle("js--hidden");
+});
+confirm_button.addEventListener("click", () => {
+    recover_form.classList.toggle("js--hidden");
+    return_form.classList.toggle("js--hidden");
+});
 
-//   $('#btn-menu-mob').click(function(e) {
-//       e.preventDefault();
-//       $('.header__svg-mob').addClass('is-active');
-
-//       $('#menu-mobile').animate({ 
-//         right: '0px' 
-//         }, 300);
-//       $('#menu-mobile').animate({ 
-//         right: '0px' 
-//         }, 300);
-//     $('body').css('overflow', 'hidden');
-//     $('.page').animate({ 
-//         right: '190px' 
-//     }, 200); 
-// });
-
-// $('.menu-mobile__svg-close').click(function(e) {
-//     e.preventDefault();
-//     $('.header__svg-mob').removeClass('is-active');
-//     $('#menu-mobile').animate({ 
-//       right: '-207px' 
-//   }, 300);
-//   $('body').css('overflow', 'auto');
-//   $('.page').animate({ 
-//       right: '0px' 
-//   }, 200); 
-// });
-
- 
+apply_form.addEventListener("submit", (event) => {
+    event.preventDefault();
+});
+recover_form.addEventListener("submit", (event) => {
+    event.preventDefault();
+});
