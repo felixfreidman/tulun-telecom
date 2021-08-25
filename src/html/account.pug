@@ -1,0 +1,98 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="./style.min.css")
+        title Personal Account
+    body.account-settings
+        mixin createMenuItem(itemName, itemLink)
+            li.navigation-menu__item
+                a(href=itemLink).navigation-menu__item-link=itemName
+        main.account-main 
+            .account-sidebar 
+                .account-sidebar--fixed
+                    .logo-section
+                        img(src="./assets/images/static/logo.svg", alt="Логотип компании")
+                    .account-navigation 
+                        ul.navigation-menu 
+                            +createMenuItem("Лицевой счет", "./account.html") 
+                            +createMenuItem("Статистика", "./account-stats.html") 
+                            +createMenuItem("Услуги", "./account-services.html")  
+                            +createMenuItem("Оплата", "./account-pay.html")  
+                            +createMenuItem("Операции с тарифами", "./account-rate.html") 
+                            +createMenuItem("Обещанный платеж", "./account-credit.html") 
+                            +createMenuItem("Добровольная блокировка", "./account-block.html") 
+                            +createMenuItem("Документы", "./account-documents.html") 
+                            +createMenuItem("Настройки", "./account-settings.html") 
+                    form(action="./").log-section 
+                        button.log-section__logoff-button Выйти из кабинета
+                    .search-section
+                        input#inputSearchField(type="text", name="accountSearchInput", placeholder="Поиск...").input-section__search-input
+
+            .account-content
+                .account-content__container
+                    .account-content__info-container.account-content__info-container--small
+                        .info-container__header Лицевой счет
+                        .info-container__row
+                            .info-container__data-name Номер счета
+                            .info-container__data-value 10005976
+                        .info-container__row
+                            .info-container__data-name Баланс
+                            .info-container__data-value -20,39
+                        .info-container__row
+                            .info-container__data-name Договор
+                            .info-container__data-value BILL0000074
+                    .account-content__info-container.account-content__info-container--small
+                        .info-container__header Состояние абонента
+                        .info-container__row
+                            .info-container__data-name Статус
+                            .info-container__data-value Новый
+                        .info-container__row
+                            .info-container__data-name Тариф
+                            .info-container__data-value 00_Минимальный 15000_300руб: 300.0 руб.
+                        .info-container__row
+                            .info-container__data-name Дата активации
+                            .info-container__data-value 02.04.2020
+                .account-content__container
+                    .account-content__info-container.account-content__info-container--big
+                        .info-container__header Расходы в текущем месяце
+                        .info-container__row
+                            .info-container__data-name Интернет по тарифу 00_Минимальный15000_300руб #1: Трафик (0.00 руб. Вх. 0.000 руб. Исх. 0.000 руб.)
+                            .info-container__data-value 0,00
+                        .info-container__row
+                            .info-container__data-name Интернет по тарифу 00_Минимальный15000_300руб #2: Трафик (0.00 руб. Вх. 0.000 руб. Исх. 0.000 руб.)
+                            .info-container__data-value 0,00
+                        .info-container__row
+                            .info-container__data-name Абонентская плата по тарифу 00_Минимальный15000_300руб: Абонентская плата (300.00 руб. )
+                            .info-container__data-value 29,03
+                .account-content__container
+                    .account-content__info-table
+                        .info-table__header-row
+                            .info-table__header-column Услуга
+                            .info-table__header-column Тариф
+                            .info-table__header-column Рекомендуем Популярные
+                        .info-table__content-row 
+                            .info-table__row-data Интернет
+                            .info-table__row-data
+                                div 
+                                    | 00_Минимальный15000
+                                    br
+                                    | _300руб: 300.0 руб.
+                                a(href="./account-rate.html").info-table__link Поменять тариф
+                            .info-table__row-data.data-value 0,00
+                .account-content__container
+                    .account-content__info-container.account-content__info-container--small
+                        .info-container__header Статистика трафика (Мегабайты):
+                        .info-container__row
+                            .info-container__data-name За час входящий:
+                            .info-container__data-value 0
+                        .info-container__row
+                            .info-container__data-name За день входящий:
+                            .info-container__data-value 0
+                        .info-container__row
+                            .info-container__data-name За месяц входящий:
+                            .info-container__data-value 29,7
+
+        script(src="./assets/js/main.min.js")  

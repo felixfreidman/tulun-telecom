@@ -1,0 +1,87 @@
+.account-settings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.account-main {
+    font-family: 'TT Commons';
+    display: flex;
+    max-height: fit-content;
+    width: 100%;
+    height: fit-content;
+    max-width: 1920px;
+}
+
+.account-sidebar {
+    max-width: 384px;
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    background-color: #FAFBFB;
+    .logo-section {
+        margin-bottom: 60px;
+    }
+    .navigation-menu {
+        list-style: none;
+        .navigation-menu__item {
+            margin-bottom: 20px;
+        }
+    }
+    position: relative;
+}
+
+.account-sidebar--fixed {
+    padding: 60px;
+}
+
+.navigation-menu__item-link,
+.navigation-menu__item-link:visited {
+    text-decoration: none;
+    color: #3C3465;
+    font-size: 24px;
+    line-height: 27px;
+    font-weight: 400;
+}
+
+.navigation-menu__item-link:hover,
+.navigation-menu__item-link:active {
+    text-decoration: none;
+    color: #DB3840;
+}
+
+.log-section__logoff-button {
+    padding: 14px;
+    background-color: #26213f;
+    font-size: 20px;
+    font-weight: 400;
+    color: #fff;
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: none;
+    outline: none;
+}
+
+.input-section__search-input {
+    border: 1px solid #cecaca;
+    border-radius: 4px;
+    padding: 20px 42px 15px 15px;
+    max-height: 14px;
+    font-size: 20px;
+    line-height: 24px;
+    width: calc(100% - 57px);
+    outline: none;
+    color: #26213f;
+    background-image: url("./assets/images/static/searchIcon.svg");
+    background-repeat: no-repeat;
+    background-position: 95% 50%;
+}
+
+.input-section__search-input::placeholder {
+    color: #b4b1b1;
+}
+
+.input-section__search-input:focus {
+    border: 1px solid #26213f;
+}
