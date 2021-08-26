@@ -1,0 +1,69 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="./style.min.css")
+        title Personal Account
+    body.account-settings
+        mixin createMenuItem(itemName, itemLink)
+            li.navigation-menu__item
+                a(href=itemLink).navigation-menu__item-link=itemName
+        main.account-main 
+            .account-sidebar 
+                .account-sidebar--fixed
+                    .logo-section
+                        img(src="./assets/images/static/logo.svg", alt="Логотип компании")
+                    .account-navigation 
+                        ul.navigation-menu 
+                            +createMenuItem("Лицевой счет", "./account.html") 
+                            +createMenuItem("Статистика", "./account-stats.html") 
+                            +createMenuItem("Услуги", "./account-services.html")  
+                            +createMenuItem("Оплата", "./account-pay.html")  
+                            +createMenuItem("Операции с тарифами", "./account-rate.html") 
+                            +createMenuItem("Обещанный платеж", "./account-credit.html") 
+                            +createMenuItem("Добровольная блокировка", "./account-block.html") 
+                            +createMenuItem("Документы", "./account-documents.html") 
+                            +createMenuItem("Настройки", "./account-settings.html") 
+                    form(action="./").log-section 
+                        button.log-section__logoff-button Выйти из кабинета
+                    .search-section
+                        input#inputSearchField(type="text", name="accountSearchInput", placeholder="Поиск...").input-section__search-input
+
+            .account-content
+                h1.account-content__header Услуги
+                input#serviceControl(type="radio", name="service_control", checked)
+                input#serviceInlined(type="radio", name="service_control")
+                .account-content__container-toggler
+                    label(for="serviceControl").container-toggler__handler Управление услугами 
+                    label(for="serviceInlined").container-toggler__handler Подключенные услуги
+                .serviceControl.account-content__container
+                    .account-content__info-container.account-content__info-container--small
+                        .info-container__header Управление услугами
+                        .info-container__row
+                            .info-container__data-empty  Нет доступных услуг
+                .serviceInlined.account-content__container
+                    .account-content__info-container.account-content__info-container--big
+                        .info-container__header 
+                            span Подключенные услуги
+                            span.info-container__subheader
+                        .info-container__row
+                            .info-container__data-name Интернет по тарифу 00_Минимальный15000_300руб #1: Трафик (0.00 руб. Вх. 0.000 руб. Исх. 0.000 руб.)
+                            .info-container__data-definition 
+                                |2021-05-17
+                                br
+                                |00:00:00
+                        .info-container__row
+                            .info-container__data-name Интернет по тарифу 00_Минимальный15000_300руб #2: Трафик (0.00 руб. Вх. 0.000 руб. Исх. 0.000 руб.)
+                            .info-container__data-definition
+                                |2021-05-17
+                                br
+                                |00:00:00
+                        .info-container__row
+                            .info-container__data-name Абонентская плата по тарифу 00_Минимальный15000_300руб: Абонентская плата (300.00 руб. )
+                            .info-container__data-definition 
+                                |2021-05-17
+                                br
+                                |00:00:00
+        script(src="./assets/js/main.min.js")  

@@ -36,9 +36,56 @@ if (document.querySelectorAll(".navigation-menu__item-link")) {
     allLink.forEach((element) => {
         var link = element.getAttribute("href");
         var formatedLink = link.replace("./", "");
-        formatedLink = formatedLink.replace(".html", "");
         if (currentLocation.includes(formatedLink)) {
             element.classList.add("item--checked");
         }
+    });
+}
+
+// Операции с тарифами
+
+// Сначала получим и выведем значение отмеченного option
+if (document.getElementById("rateSelect")) {
+    var selectInputField = document.getElementById("rateSelect");
+    var allOptionsArray = document.querySelectorAll(".rate-form__option");
+    var selectModalWindow = document.getElementById("rateModal");
+    displaySelectValue();
+    // По клику меняем значение data-checked
+    allOptionsArray.forEach((element) => {
+        element.addEventListener("click", () => {
+            uncheckEverySpan();
+            element.setAttribute("data-checked", "checked");
+            displaySelectValue();
+            selectModalWindow.classList.remove("js--hidden");
+            selectInputField.classList.toggle("js--rotate-arrow");
+        });
+    });
+    selectInputField.addEventListener("click", () => {
+        selectInputField.classList.toggle("js--rotate-arrow");
+        selectModalWindow.classList.toggle("js--hidden");
+    });
+
+    selectModalWindow.addEventListener("mouseleave", () => {
+        selectInputField.classList.toggle("js--rotate-arrow");
+        selectModalWindow.classList.add("js--hidden");
+    });
+}
+// Передача data-checked значения в поле Select
+function displaySelectValue() {
+    var selectInputField = document.getElementById("rateSelect");
+    var allOptionsArray = document.querySelectorAll(".rate-form__option");
+    allOptionsArray.forEach((element) => {
+        var checkedBool = element.getAttribute("data-checked");
+        if (checkedBool == "checked") {
+            var checkedValue = element.textContent;
+            selectInputField.value = checkedValue;
+        }
+    });
+}
+
+function uncheckEverySpan() {
+    var allOptionsArray = document.querySelectorAll(".rate-form__option");
+    allOptionsArray.forEach((newElement) => {
+        newElement.setAttribute("data-checked", "unchecked");
     });
 }

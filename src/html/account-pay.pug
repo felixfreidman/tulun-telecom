@@ -1,0 +1,57 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="./style.min.css")
+        title Personal Account
+    body.account-settings
+        mixin createMenuItem(itemName, itemLink)
+            li.navigation-menu__item
+                a(href=itemLink).navigation-menu__item-link=itemName
+        main.account-main 
+            .account-sidebar 
+                .account-sidebar--fixed
+                    .logo-section
+                        img(src="./assets/images/static/logo.svg", alt="Логотип компании")
+                    .account-navigation 
+                        ul.navigation-menu 
+                            +createMenuItem("Лицевой счет", "./account.html") 
+                            +createMenuItem("Статистика", "./account-stats.html") 
+                            +createMenuItem("Услуги", "./account-services.html")  
+                            +createMenuItem("Оплата", "./account-pay.html")  
+                            +createMenuItem("Операции с тарифами", "./account-rate.html") 
+                            +createMenuItem("Обещанный платеж", "./account-credit.html") 
+                            +createMenuItem("Добровольная блокировка", "./account-block.html") 
+                            +createMenuItem("Документы", "./account-documents.html") 
+                            +createMenuItem("Настройки", "./account-settings.html") 
+                    form(action="./").log-section 
+                        button.log-section__logoff-button Выйти из кабинета
+                    .search-section
+                        input#inputSearchField(type="text", name="accountSearchInput", placeholder="Поиск...").input-section__search-input
+
+            .account-content
+                h1.account-content__header Оплата
+                .account-content__pay-container
+                    .pay-container__pay-block
+                        .pay-block__header Моментальная оплата банковскими картами без комиссии
+                        form.pay-form
+                            label(for="payInputField").pay-form__label Сумма
+                                input#payInputField(type="text", name="paymentField", placeholder="Введите сумму.." ).pay-form__input
+                            button(type="submit").pay-form__button Оплатить
+                section.account-content__pay-section 
+                    .pay-section__header Дополнительные способы оплаты:
+                    .pay-section__subheader Для оплаты используйте номер договора.
+                    .pay-section__contract-text 
+                        .contract-text__help-text  Ваш номер договора: 
+                        .contract-text__contract-number BILL0000074
+                    .pay-section__payment-options 
+                        a(href='./option1.html').payment-options__option
+                            img(src="./assets/images/static/payOption1.svg", alt="Сбербанк Оплата").payment-option__img 
+                        a(href='./option2.html').payment-options__option 
+                            img(src="./assets/images/static/payOption2.svg", alt="Сбербанк Оплата")  
+                    .pay-section__noting-container
+                        span.noting-container__beware-note Примечание:
+                        |для оплаты через сбербанк онлайн зайдите «Интернет и ТВ», в поиске напишите «Тулун Телеком».
+        script(src="./assets/js/main.min.js")  

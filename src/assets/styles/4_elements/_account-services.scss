@@ -1,0 +1,53 @@
+.account-content__header {
+    font-size: 36px;
+    color: #504587;
+    margin-bottom: 30px;
+}
+
+.container-toggler__handler {
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 29px;
+    color: #504587;
+    opacity: 0.25;
+    cursor: pointer;
+    margin-right: 30px;
+}
+
+.account-content__container-toggler {
+    display: flex;
+    margin-bottom: 25px;
+}
+
+#serviceControl:checked~.account-content__container-toggler>label[for="serviceControl"] {
+    color: #000;
+    opacity: 1;
+    border-bottom: 5px solid #d22730;
+}
+
+.serviceControl,
+.serviceInlined,
+#serviceControl,
+#serviceInlined {
+    display: none;
+}
+
+#serviceControl:checked~.serviceControl {
+    display: flex;
+}
+
+#serviceInlined:checked~.account-content__container-toggler>label[for="serviceInlined"] {
+    color: #000;
+    opacity: 1;
+    border-bottom: 5px solid #d22730;
+}
+
+#serviceInlined:checked~.serviceInlined {
+    display: flex;
+}
+
+.info-container__data-empty {
+    color: #b3b1b1;
+    font-size: 20px;
+    line-height: 20px;
+}
