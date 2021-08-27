@@ -5,32 +5,10 @@ html(lang="en")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         link(rel="stylesheet", href="./style.min.css")
-        title Personal Account
+        title Личный Кабинет | Услуги
     body.account-settings
-        mixin createMenuItem(itemName, itemLink)
-            li.navigation-menu__item
-                a(href=itemLink).navigation-menu__item-link=itemName
-        main.account-main 
-            .account-sidebar 
-                .account-sidebar--fixed
-                    .logo-section
-                        img(src="./assets/images/static/logo.svg", alt="Логотип компании")
-                    .account-navigation 
-                        ul.navigation-menu 
-                            +createMenuItem("Лицевой счет", "./account.html") 
-                            +createMenuItem("Статистика", "./account-stats.html") 
-                            +createMenuItem("Услуги", "./account-services.html")  
-                            +createMenuItem("Оплата", "./account-pay.html")  
-                            +createMenuItem("Операции с тарифами", "./account-rate.html") 
-                            +createMenuItem("Обещанный платеж", "./account-credit.html") 
-                            +createMenuItem("Добровольная блокировка", "./account-block.html") 
-                            +createMenuItem("Документы", "./account-documents.html") 
-                            +createMenuItem("Настройки", "./account-settings.html") 
-                    form(action="./").log-section 
-                        button.log-section__logoff-button Выйти из кабинета
-                    .search-section
-                        input#inputSearchField(type="text", name="accountSearchInput", placeholder="Поиск...").input-section__search-input
-
+        main.account-main
+            include ./sidebar-temp.pug
             .account-content
                 h1.account-content__header Услуги
                 input#serviceControl(type="radio", name="service_control", checked)

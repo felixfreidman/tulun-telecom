@@ -1,0 +1,28 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="./style.min.css")
+        title Личный Кабинет | Обещанный платеж
+    body.account-settings
+        main.account-main 
+            include ./sidebar-temp.pug
+            .account-content
+                h1.account-content__header Поиск
+                .account-content__search-module
+                    form(action="./account-search.html").search-form
+                        input#searchField(type="text", name="searchFieldInput").search-form__input
+                        button(type="submit").search-form__button Найти
+                .account-content__search-container
+                    span.search-container__search-counter 
+                    .search-container__results-container 
+                        .result 
+                            span.results-container__header Обещанный платеж / 
+                            a.results-container__link Активировать обещанный платеж
+                        .result
+                            span.results-container__header Способы оплаты 
+                            a.results-container__link / Быстрый платеж
+                    
+        script(src="./assets/js/main.min.js")  

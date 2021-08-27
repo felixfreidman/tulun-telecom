@@ -1,0 +1,24 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="./style.min.css")
+        title Не найдено
+    body.account-settings.account-error
+        mixin createMenuItem(itemName, itemLink)
+            li.navigation-menu__item
+                a(href=itemLink).navigation-menu__item-link=itemName
+        main.account-main 
+            include ./sidebar-temp.pug
+            .notfound-container
+                .notfound-container__header Ошибка 404
+                .error-container 
+                    ol.error-container__steps 
+                        li.error-container__step Чтобы быть уверенным, проверьте, правильно ли вы ввели адрес, или же попробуйте выполнить поиск в навигации слева. 
+                         li.error-container__step 
+                            | Если ничего не помогает, мы рекомендуем вернуться на 
+                            a(href="./account.html").error-container__link главную страницу.
+        script(src="./assets/js/main.min.js")   
+                

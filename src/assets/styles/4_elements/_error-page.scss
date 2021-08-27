@@ -1,0 +1,67 @@
+.notfound-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+    cursor: default;
+    flex-direction: column;
+    .notfound-container__header {
+        font-weight: 600;
+        font-size: 70px;
+        color: #d22730;
+        margin-bottom: 60px;
+    }
+    .error-container {
+        border: 2px solid #26213f;
+        padding: 48px;
+        box-shadow: 0px 10px 20px rgba(130, 143, 169, 0.3);
+        border-radius: 10px;
+        max-width: 734px;
+        position: relative;
+        cursor: default;
+        .error-container__steps {
+            margin-left: 25px;
+            .error-container__step {
+                counter-increment: li;
+                font-size: 22px;
+                font-weight: 400;
+                color: #000;
+                line-height: 25px;
+                position: relative;
+                &::before {
+                    content: counter(li) ".";
+                    color: #d22730;
+                    display: inline-block;
+                    width: 1em;
+                    text-align: start;
+                    position: absolute;
+                    top: 0;
+                    left: -26px;
+                    font-weight: 600;
+                    font-size: 22px;
+                }
+                &:first-child {
+                    margin-bottom: 30px;
+                }
+            }
+        }
+        &:before {
+            content: "";
+            width: 67px;
+            height: 50px;
+            display: block;
+            background: url("/assets/images/static/errorIcon.svg") no-repeat 50% 8%, #ffffff;
+            position: absolute;
+            top: -30px;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+.account-error {
+    overflow: hidden;
+}

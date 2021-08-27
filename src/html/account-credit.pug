@@ -5,65 +5,12 @@ html(lang="en")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         link(rel="stylesheet", href="./style.min.css")
-        title Личный Кабинет | Тарифы
+        title Личный Кабинет | Обещанный платеж
     body.account-settings
-        mixin createMenuItem(itemName, itemLink)
-            li.navigation-menu__item
-                a(href=itemLink).navigation-menu__item-link=itemName
-        main.account-main 
-            .account-sidebar 
-                .account-sidebar--fixed
-                    .logo-section
-                        img(src="./assets/images/static/logo.svg", alt="Логотип компании")
-                    .account-navigation 
-                        ul.navigation-menu 
-                            +createMenuItem("Лицевой счет", "./account.html") 
-                            +createMenuItem("Статистика", "./account-stats.html") 
-                            +createMenuItem("Услуги", "./account-services.html")  
-                            +createMenuItem("Оплата", "./account-pay.html")  
-                            +createMenuItem("Операции с тарифами", "./account-rate.html") 
-                            +createMenuItem("Обещанный платеж", "./account-credit.html") 
-                            +createMenuItem("Добровольная блокировка", "./account-block.html") 
-                            +createMenuItem("Документы", "./account-documents.html") 
-                            +createMenuItem("Настройки", "./account-settings.html") 
-                    form(action="./").log-section 
-                        button.log-section__logoff-button Выйти из кабинета
-                    .search-section
-                        input#inputSearchField(type="text", name="accountSearchInput", placeholder="Поиск...").input-section__search-input
-
+        main.account-main
+            include ./sidebar-temp.pug 
             .account-content
-                h1.account-content__header Услуги
-                input#serviceControl(type="radio", name="service_control", checked)
-                input#serviceInlined(type="radio", name="service_control")
-                .account-content__container-toggler
-                    label(for="serviceControl").container-toggler__handler Смена тарифа 
-                    label(for="serviceInlined").container-toggler__handler Подключенные услуги
-                .serviceControl.account-content__container
-                    .account-content__info-container.account-content__info-container--small.rate-container
-                        .rate-container__header Смена тарифа
-                        form.rate-form
-                            label.rate-form__label Перейти на тариф:
-                                input#rateSelect(type="text", name="rateSelect", readonly).rate-form__input
-                                .rate-form__arrow
-                                .rate-form__modal.js--hidden#rateModal
-                                    span.rate-form__option(data-checked="checked") IPTV_Домашний 1
-                                    span.rate-form__option(data-checked="unchecked") IPTV_Домашний 2
-                                    span.rate-form__option(data-checked="unchecked") IPTV_Домашний 3
-                                    span.rate-form__option(data-checked="unchecked") IPTV_Домашний 4
-                                    span.rate-form__option(data-checked="unchecked") IPTV_Домашний 5
-                                    span.rate-form__option(data-checked="unchecked") IPTV_Домашний 6
-                            button.rate-form__button Перейти
-                .serviceInlined.account-content__container
-                    .account-content__info-container.account-content__info-container--small
-                        .info-container__header История смены тарифов
-                        .info-container__row
-                            .info-container__data-name 14.07.2019
-                            .info-container__data-value  100 на 6 мес.: 500.0 руб.
-                        .info-container__row
-                            .info-container__data-name 14.07.2019
-                            .info-container__data-value  200 на 3 мес.: 200.0 руб.
-                        .info-container__row
-                            .info-container__data-name 14.07.2019
-                            .info-container__data-value  100 на 6 мес.: 500.0 руб.
+                h1.account-content__header Обещанный платеж
+                button.account-content__button-action Активировать обещанный платеж
                     
         script(src="./assets/js/main.min.js")  

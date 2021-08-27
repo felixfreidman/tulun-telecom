@@ -1,0 +1,28 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="./style.min.css")
+        title Личный Кабинет | Добровольная блокировка
+    body.account-settings 
+        main.account-main
+            include ./sidebar-temp.pug 
+            .account-content
+                h1.account-content__header Добровольная блокировка
+                .account-content__blocking-container
+                    .blocking-container__header Блокировка
+                    .blocking-container__subheader 
+                        | Стоимость услуги:
+                        span.blocking-container__price 350 руб 
+                    form.blocking-form 
+                        label(for="blockingInputStart").blocking-form__label Начало:
+                            input#blockingInputStart.blocking-form__input(type="text", name="blockingFieldStart", placeholder="01.04.2021", required, readonly)
+                        label(for="blockingInputFinish").blocking-form__label Конец:
+                            input#blockingInputFinish.blocking-form__input(type="text", name="blockingFieldFinish", placeholder="07.07.2021", required, readonly)
+                        button(type="submit").blocking-form__button Заблокировать
+                    .blocking-container__warning Стоимость услуги в частном секторе составляет 6 руб./сутки.
+
+                    
+        script(src="./assets/js/main.min.js")  

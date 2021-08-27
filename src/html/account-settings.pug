@@ -1,0 +1,21 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="./style.min.css")
+        title Личный Кабинет | Настройки
+    body.account-settings
+        main.account-main 
+            include ./sidebar-temp.pug
+            .account-content
+                h1.account-content__header Настройки
+                form.settings-form
+                    label(for="smsInputField").settings-form__label Номер для SMS-информирования
+                        input#smsInputField(type="tel", name="smsField", required, placeholder = "Телефон").settings-form__input 
+                    label(for="telInputField").settings-form__label Телефон
+                        input#telInputField(type="tel", name="telField", required, placeholder = "Телефон").settings-form__input 
+                    button(type="submit").settings-form__button Изменить
+
+        script(src="./assets/js/main.min.js")  

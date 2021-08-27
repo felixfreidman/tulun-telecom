@@ -1,0 +1,24 @@
+.account-content__info-table--docs {
+    .info-table__header-row {
+        .info-table__header-column:last-child {
+            text-decoration: none;
+        }
+    }
+    .info-table__row-data {
+        .info-table__button {
+            border-radius: 4px;
+            background-color: #26213f;
+            color: #fff;
+            padding: 13px 0 11px;
+            width: 163px;
+            text-decoration: none;
+            font-size: 20px;
+            line-height: 23px;
+            font-weight: 400;
+            text-align: center;
+            &:hover {
+                box-shadow: 0px 10px 20px rgba(130, 143, 169, 0.3);
+            }
+        }
+    }
+}

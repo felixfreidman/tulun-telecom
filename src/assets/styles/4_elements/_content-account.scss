@@ -1,3 +1,7 @@
+body {
+    overflow-x: hidden;
+}
+
 .account-content {
     background-color: #fff;
     width: 100%;
@@ -160,4 +164,13 @@
             }
         }
     }
+}
+
+button:hover,
+a:hover {
+    color: #D22730 !important;
+}
+
+input:hover {
+    border-color: #26213f !important;
 }

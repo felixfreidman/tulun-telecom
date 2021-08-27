@@ -1,0 +1,80 @@
+.account-content__blocking-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    box-shadow: 0px 10px 20px rgba(130, 143, 169, 0.3);
+    cursor: default;
+    padding: 32px;
+    border-radius: 10px;
+    .blocking-container__header {
+        font-weight: 700;
+        font-size: 26px;
+        line-height: 29px;
+        margin-bottom: 20px;
+    }
+    .blocking-container__subheader {
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 25px;
+        color: #000;
+        .blocking-container__price {
+            color: #d22730;
+            font-size: 24px;
+            margin-left: 5px;
+        }
+    }
+    .blocking-form {
+        display: flex;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        align-items: flex-end;
+        width: 100%;
+        .blocking-form__label {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 23px;
+            width: 38%;
+            .blocking-form__input {
+                margin-top: 5px;
+                padding: 13px 15px 9px;
+                font-size: 16px;
+                line-height: 22px;
+                font-weight: 400;
+                border-radius: 4px;
+                border: 1px solid #CECACA;
+                margin-right: 30px;
+                outline: none;
+                width: 80%;
+                color: #504587;
+                &::placeholder {
+                    color: #B4B1B1;
+                }
+                &:focus {
+                    border: 1px solid #504587;
+                }
+            }
+        }
+        .blocking-form__button {
+            width: 24%;
+            border-radius: 4px;
+            background-color: #26213f;
+            color: #fff;
+            font-size: 20px;
+            line-height: 23px;
+            font-weight: 400;
+            border: none;
+            padding: 14px 0 10px;
+            max-height: 44px;
+        }
+    }
+    .blocking-container__warning {
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 25px;
+        color: #db3840;
+    }
+}

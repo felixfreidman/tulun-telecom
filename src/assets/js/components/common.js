@@ -5,7 +5,7 @@ if (document.querySelector(".auth-form__recover")) {
         recover_form.classList.toggle("js--hidden");
     });
 }
-if (document.querySelector(".auth-form__continu")) {
+if (document.querySelector(".auth-form__continue")) {
     var confirm_button = document.querySelector(".auth-form__continue");
     confirm_button.addEventListener("click", () => {
         recover_form.classList.toggle("js--hidden");
