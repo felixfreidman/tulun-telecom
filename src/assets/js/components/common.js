@@ -114,3 +114,119 @@ if (document.getElementById("searchField")) {
         document.getElementById("emptyResult").classList.add("js--hidden");
     }
 }
+
+if (document.querySelector(".blocking-form__input")) {
+    // Добавление подложки
+    var calendarInputs = document.querySelectorAll(".blocking-form__input");
+    calendarInputs.forEach((element) => {
+        element.addEventListener("click", () => {
+            var layer = document.createElement("div");
+            layer.classList.add("calendar-layer");
+            document.querySelector("body").append(layer);
+            layer.addEventListener("click", () => {
+                layer.classList.add("js--hidden");
+            });
+            var calendar = document.querySelector(".ui-datepicker");
+
+            var allLinks = calendar.querySelectorAll("a");
+            allLinks.forEach((elem) => {
+                elem.addEventListener("click", () => {
+                    layer.classList.add("js--hidden");
+                });
+            });
+        });
+    });
+    // Убирание подложки
+}
+
+$(function() {
+    $.datepicker.regional["ru"] = {
+        closeText: "Закрыть",
+        prevText: "",
+        nextText: "",
+        currentText: "Сегодня",
+        monthNames: [
+            "Январь",
+            "Февраль",
+            "Март",
+            "Апрель",
+            "Май",
+            "Июнь",
+            "Июль",
+            "Август",
+            "Сентябрь",
+            "Октябрь",
+            "Ноябрь",
+            "Декабрь",
+        ],
+        monthNamesShort: [
+            "Январь",
+            "Февраль",
+            "Март",
+            "Апрель",
+            "Май",
+            "Июнь",
+            "Июль",
+            "Август",
+            "Сентябрь",
+            "Октябрь",
+            "Ноябрь",
+            "Декабрь",
+        ],
+        dayNames: [
+            "воскресенье",
+            "понедельник",
+            "вторник",
+            "среда",
+            "четверг",
+            "пятница",
+            "суббота",
+        ],
+        dayNamesShort: ["вск", "пнд", "втр", "срд", "чтв", "птн", "сбт"],
+        dayNamesMin: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+        weekHeader: "Нед",
+        dateFormat: "dd.mm.yy",
+        firstDay: 1,
+        isRTL: false,
+        showMonthAfterYear: false,
+        yearSuffix: "",
+    };
+    $.datepicker.setDefaults($.datepicker.regional["ru"]);
+    var dateFormat = "dd.mm.yy",
+        from = $("#blockingInputStart")
+        .datepicker($.datepicker.regional["ru"], {
+            inline: true,
+            changeYear: true,
+            gotoCurrent: true,
+            minDate: new Date(),
+            showAnim: "slideDown",
+            numberOfMonths: 1,
+        })
+        .on("change", function() {
+            $("#blockingInputFinish").datepicker(
+                "option",
+                "minDate",
+                getDate(this)
+            );
+        }),
+        to = $("#blockingInputFinish").datepicker($.datepicker.regional["ru"], {
+            inline: true,
+            changeYear: true,
+            gotoCurrent: true,
+            defaultDate: "+1w",
+            showAnim: "slideDown",
+            numberOfMonths: 1,
+        });
+
+    function getDate(element) {
+        var date;
+        try {
+            date = $.datepicker.parseDate(dateFormat, element.value);
+        } catch (error) {
+            date = null;
+            console.log(date);
+        }
+
+        return date;
+    }
+});

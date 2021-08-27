@@ -46,9 +46,10 @@
     "Firefox ESR"
   ],
   "dependencies": {
-    "jquery": "^3.4.1",
+    "@fancyapps/fancybox": "3.5.2",
+    "jquery": "^3.6.0",
+    "jquery-datepicker": "^1.12.3",
     "jquery-mask-plugin": "^1.14.16",
-    "swiper": "^4.5.0",
-    "@fancyapps/fancybox": "3.5.2"
+    "swiper": "^4.5.0"
   }
 }

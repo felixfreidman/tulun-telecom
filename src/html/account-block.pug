@@ -18,11 +18,14 @@ html(lang="en")
                         span.blocking-container__price 350 руб 
                     form.blocking-form 
                         label(for="blockingInputStart").blocking-form__label Начало:
-                            input#blockingInputStart.blocking-form__input(type="text", name="blockingFieldStart", placeholder="01.04.2021", required, readonly)
+                            input#blockingInputStart.blocking-form__input(type="text", name="blockingFieldStart", placeholder="01.04.2021", required)
                         label(for="blockingInputFinish").blocking-form__label Конец:
-                            input#blockingInputFinish.blocking-form__input(type="text", name="blockingFieldFinish", placeholder="07.07.2021", required, readonly)
+                            input#blockingInputFinish.blocking-form__input(type="text", name="blockingFieldFinish", placeholder="07.07.2021", required)
                         button(type="submit").blocking-form__button Заблокировать
                     .blocking-container__warning Стоимость услуги в частном секторе составляет 6 руб./сутки.
 
-                    
-        script(src="./assets/js/main.min.js")  
+        
+        script(src="https://code.jquery.com/jquery-1.12.4.js")
+        script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.js")
+        script(src="https://github.com/jquery/jquery-ui/blob/master/ui/i18n/datepicker-ru.js")              
+        script(src="./assets/js/main.min.js")
