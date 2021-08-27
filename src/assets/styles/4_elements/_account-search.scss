@@ -1,6 +1,89 @@
 .account-content__search-container {
     display: flex;
     width: 100%;
+    cursor: default;
 }
 
 // Search Form Customization
+.search-form {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    .search-form__input {
+        width: calc(70% - 40px);
+        border: 1px solid #cecaca;
+        border-radius: 4px;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 24px;
+        color: #26213f;
+        outline: none;
+        padding: 20px 20px 15px;
+        max-height: 14px;
+        margin-bottom: 30px;
+        &::placeholder {
+            color: #b4b1b1;
+        }
+        &:focus {
+            border: 1px solid #26213f;
+        }
+    }
+    .search-form__button {
+        width: 28%;
+        max-height: 51px;
+        color: #fff;
+        background-color: #26213f;
+        border-radius: 8px;
+        border: none;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 23px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+}
+
+.account-content__search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    .search-container__search-counter {
+        color: #cecaca;
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 400;
+    }
+    .search-container__results-container {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .result {
+        display: flex;
+        .results-container__header {
+            font-weight: 600;
+            font-size: 22px;
+            line-height: 25px;
+            color: #26213f;
+            margin-right: 5px;
+        }
+        .results-container__link {
+            font-weight: 600;
+            font-size: 22px;
+            line-height: 25px;
+            color: #D22730;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+}
+
+.search-container__search-error {
+    color: #D22730;
+    font-size: 26px;
+    line-height: 24px;
+    font-weight: 400;
+}

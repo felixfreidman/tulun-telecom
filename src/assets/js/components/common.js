@@ -89,3 +89,28 @@ function uncheckEverySpan() {
         newElement.setAttribute("data-checked", "unchecked");
     });
 }
+
+// Обработка формы поиска в боковом меню
+if (document.querySelector(".search-section--form ")) {
+    var sidebarSearchForm = document.querySelector(".search-section--form");
+    var sidebarSearchInput = document.querySelector(
+        ".input-section__search-input"
+    );
+    sidebarSearchForm.addEventListener("submit", (event) => {
+        var searchValue = sidebarSearchInput.value;
+        localStorage.setItem("searchResult", searchValue);
+    });
+}
+
+// Результаты поиска
+
+if (document.getElementById("searchField")) {
+    var searchFieldResult = document.getElementById("searchField");
+    var searchResult = localStorage.getItem("searchResult");
+    console.log(localStorage.getItem("searchResult"));
+    searchFieldResult.value = searchResult;
+    if (searchFieldResult.value == "Платеж") {
+        document.getElementById("fullResult").classList.remove("js--hidden");
+        document.getElementById("emptyResult").classList.add("js--hidden");
+    }
+}

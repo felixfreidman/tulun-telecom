@@ -12,17 +12,19 @@ html(lang="en")
             .account-content
                 h1.account-content__header Поиск
                 .account-content__search-module
-                    form(action="./account-search.html").search-form
-                        input#searchField(type="text", name="searchFieldInput").search-form__input
+                    form(action="./account-search.html", method="GET").search-form
+                        input#searchField(type="text", name="searchFieldInput", placeholder="Поиск...").search-form__input
                         button(type="submit").search-form__button Найти
                 .account-content__search-container
-                    span.search-container__search-counter 
-                    .search-container__results-container 
+                    span.search-container__search-counter.js--hidden 2 результата
+                    .search-container__results-container#emptyResult
+                        span.search-container__search-error По вашему запросу ничего не было найдено
+                    .search-container__results-container#fullResult.js--hidden 
                         .result 
                             span.results-container__header Обещанный платеж / 
-                            a.results-container__link Активировать обещанный платеж
+                            a(href="./account-credit.html").results-container__link Активировать обещанный платеж
                         .result
-                            span.results-container__header Способы оплаты 
-                            a.results-container__link / Быстрый платеж
+                            span.results-container__header Способы оплаты /
+                            a(href="./account-pay.html").results-container__link Быстрый платеж
                     
         script(src="./assets/js/main.min.js")  
