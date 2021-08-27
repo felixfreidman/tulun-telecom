@@ -149,3 +149,25 @@
         z-index: -1;
     }
 }
+
+.ui-datepicker-days-cell-over {
+    position: relative;
+    cursor: pointer;
+    a {
+        color: #fff;
+        &:hover {
+            color: #fff !important;
+        }
+        &:after {
+            width: 56px;
+            height: 56px;
+            background-color: #26213f;
+            content: "";
+            display: block;
+            position: absolute;
+            border-radius: 50%;
+            top: -18px;
+            z-index: -1;
+        }
+    }
+}

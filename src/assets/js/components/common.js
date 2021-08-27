@@ -139,6 +139,18 @@ if (document.querySelector(".blocking-form__input")) {
     // Убирание подложки
 }
 
+function formattedDate(date) {
+    var month = String(date.getMonth() + 1);
+    var day = String(date.getDate());
+    var year = String(date.getFullYear());
+    var year = year.replace("20", "");
+    if (month.length < 2) month = "0" + month;
+    if (day.length < 2) day = "0" + day;
+    return `${day}.${month}.${year}`;
+}
+var dateNew = new Date();
+console.log(formattedDate(dateNew));
+
 $(function() {
     $.datepicker.regional["ru"] = {
         closeText: "Закрыть",
@@ -194,14 +206,17 @@ $(function() {
     $.datepicker.setDefaults($.datepicker.regional["ru"]);
     var dateFormat = "dd.mm.yy",
         from = $("#blockingInputStart")
-        .datepicker($.datepicker.regional["ru"], {
-            inline: true,
-            changeYear: true,
-            gotoCurrent: true,
-            minDate: new Date(),
-            showAnim: "slideDown",
-            numberOfMonths: 1,
-        })
+        .datepicker({
+                inline: true,
+                changeYear: true,
+                gotoCurrent: true,
+                dateFormat: "dd.mm.yy",
+                minDate: 0,
+                showAnim: "slideDown",
+                numberOfMonths: 1,
+            },
+            $.datepicker.regional["ru"]
+        )
         .on("change", function() {
             $("#blockingInputFinish").datepicker(
                 "option",
@@ -209,14 +224,15 @@ $(function() {
                 getDate(this)
             );
         }),
-        to = $("#blockingInputFinish").datepicker($.datepicker.regional["ru"], {
-            inline: true,
-            changeYear: true,
-            gotoCurrent: true,
-            defaultDate: "+1w",
-            showAnim: "slideDown",
-            numberOfMonths: 1,
-        });
+        to = $("#blockingInputFinish").datepicker({
+                inline: true,
+                changeYear: true,
+                gotoCurrent: true,
+                showAnim: "slideDown",
+                numberOfMonths: 1,
+            },
+            $.datepicker.regional["ru"]
+        );
 
     function getDate(element) {
         var date;
