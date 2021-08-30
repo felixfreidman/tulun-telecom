@@ -47,6 +47,7 @@ if (document.querySelectorAll(".navigation-menu__item-link")) {
 // Сначала получим и выведем значение отмеченного option
 if (document.getElementById("rateSelect")) {
     var selectInputField = document.getElementById("rateSelect");
+    var selectInputLabel = document.querySelector(".rate-form__label");
     var allOptionsArray = document.querySelectorAll(".rate-form__option");
     var selectModalWindow = document.getElementById("rateModal");
     displaySelectValue();
@@ -57,16 +58,16 @@ if (document.getElementById("rateSelect")) {
             element.setAttribute("data-checked", "checked");
             displaySelectValue();
             selectModalWindow.classList.remove("js--hidden");
-            selectInputField.classList.toggle("js--rotate-arrow");
+            selectInputLabel.classList.toggle("js--rotate-arrow");
         });
     });
     selectInputField.addEventListener("click", () => {
-        selectInputField.classList.toggle("js--rotate-arrow");
+        selectInputLabel.classList.toggle("js--rotate-arrow");
         selectModalWindow.classList.toggle("js--hidden");
     });
 
     selectModalWindow.addEventListener("mouseleave", () => {
-        selectInputField.classList.toggle("js--rotate-arrow");
+        selectInputLabel.classList.toggle("js--rotate-arrow");
         selectModalWindow.classList.add("js--hidden");
     });
 }

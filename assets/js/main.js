@@ -51,6 +51,7 @@ if (document.querySelectorAll(".navigation-menu__item-link")) {
 
 if (document.getElementById("rateSelect")) {
   var selectInputField = document.getElementById("rateSelect");
+  var selectInputLabel = document.querySelector(".rate-form__label");
   var allOptionsArray = document.querySelectorAll(".rate-form__option");
   var selectModalWindow = document.getElementById("rateModal");
   displaySelectValue(); // По клику меняем значение data-checked
@@ -61,15 +62,15 @@ if (document.getElementById("rateSelect")) {
       element.setAttribute("data-checked", "checked");
       displaySelectValue();
       selectModalWindow.classList.remove("js--hidden");
-      selectInputField.classList.toggle("js--rotate-arrow");
+      selectInputLabel.classList.toggle("js--rotate-arrow");
     });
   });
   selectInputField.addEventListener("click", function () {
-    selectInputField.classList.toggle("js--rotate-arrow");
+    selectInputLabel.classList.toggle("js--rotate-arrow");
     selectModalWindow.classList.toggle("js--hidden");
   });
   selectModalWindow.addEventListener("mouseleave", function () {
-    selectInputField.classList.toggle("js--rotate-arrow");
+    selectInputLabel.classList.toggle("js--rotate-arrow");
     selectModalWindow.classList.add("js--hidden");
   });
 } // Передача data-checked значения в поле Select

@@ -146,12 +146,15 @@
     .pay-form__input {
         margin-bottom: 20px;
     }
-}
-
-@media (max-width: 450px) {
+    .account-content__pay-container .pay-container__pay-block {
+        padding: 16px;
+    }
     .payment-options__option {
         img {
             max-width: 100%;
         }
+    }
+    .account-content__pay-section .pay-section__noting-container {
+        width: 100%;
     }
 }
