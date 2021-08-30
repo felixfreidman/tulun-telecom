@@ -126,3 +126,32 @@
         }
     }
 }
+
+@media (max-width: 1024px) {
+    .account-content__pay-section .pay-section__payment-options {
+        flex-direction: column;
+    }
+    .account-content__pay-section .pay-section__payment-options .payment-options__option:last-child {
+        margin-left: -20px;
+    }
+}
+
+@media (max-width: 700px) {
+    .account-content__pay-container .pay-container__pay-block,
+    .account-content__pay-section,
+    .account-content__pay-container .pay-container__pay-block .pay-form {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .pay-form__input {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 450px) {
+    .payment-options__option {
+        img {
+            max-width: 100%;
+        }
+    }
+}

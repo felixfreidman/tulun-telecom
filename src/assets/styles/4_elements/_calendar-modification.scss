@@ -24,6 +24,11 @@
     max-height: 405px;
     padding: 72px;
     font-family: TT Commons;
+    border-radius: 5px;
+}
+
+.ui-datepicker~.calendar-layer {
+    display: block;
 }
 
 .ui-datepicker a {
@@ -170,4 +175,13 @@
             z-index: -1;
         }
     }
+}
+
+.ui-datepicker-year {
+    border: none;
+    outline: none;
+    color: #504587;
+    font-weight: 700;
+    line-height: 29px;
+    text-decoration: underline;
 }

@@ -52,3 +52,12 @@
     font-size: 20px;
     line-height: 20px;
 }
+
+@media (max-width:1200px) {
+    .info-container__data-definition {
+        font-size: 14px;
+    }
+    .container-toggler__handler {
+        font-size: 20px;
+    }
+}

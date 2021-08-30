@@ -174,3 +174,55 @@ a:hover {
 input:hover {
     border-color: #26213f !important;
 }
+
+@media (min-width: 1201px) {
+    .account-content__info-container .info-container__row {
+        max-height: 60px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .account-content {
+        padding-right: 26px;
+    }
+    .account-sidebar {
+        display: none;
+    }
+    .account-content__container {
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+    .account-content__info-container--small,
+    .account-content__info-container--big,
+    .account-content__info-table {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .account-content__info-container--big .info-container__row .info-container__data-name,
+    .account-content__info-table .info-table__content-row .info-table__row-data {
+        width: 80%;
+        font-size: 14px;
+    }
+    .account-content__info-container .info-container__row {
+        max-height: 68px;
+    }
+}
+
+@media (max-width: 500px) {
+    .account-content__info-container .info-container__header,
+    .account-content__info-table .info-table__header-row .info-table__header-column {
+        font-size: 20px;
+    }
+    .account-content__info-table .info-table__header-row .info-table__header-column:last-child {
+        display: none;
+    }
+    .account-content__info-table .info-table__content-row .info-table__row-data:last-child {
+        display: none;
+    }
+    .account-content__info-table .info-table__header-row .info-table__header-column {
+        width: 50%;
+    }
+    .account-content__info-table .info-table__header-row .info-table__header-column:nth-child(2) {
+        border-radius: 0 10px 0 0;
+    }
+}

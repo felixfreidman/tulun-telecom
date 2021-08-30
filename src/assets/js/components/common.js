@@ -117,132 +117,143 @@ if (document.getElementById("searchField")) {
 
 if (document.querySelector(".blocking-form__input")) {
     // Добавление подложки
-    var calendarInputs = document.querySelectorAll(".blocking-form__input");
-    calendarInputs.forEach((element) => {
+    var calendarLabels = document.querySelectorAll(".blocking-form__label");
+    calendarLabels.forEach((element) => {
         element.addEventListener("click", () => {
-            var layer = document.createElement("div");
-            layer.classList.add("calendar-layer");
-            document.querySelector("body").append(layer);
+            var layer = document.querySelector(".calendar-layer");
             layer.addEventListener("click", () => {
                 layer.classList.add("js--hidden");
             });
+            element.addEventListener("click", () => {
+                layer.classList.remove("js--hidden");
+            });
             var calendar = document.querySelector(".ui-datepicker");
-
-            var allLinks = calendar.querySelectorAll("a");
+            var allLinks = calendar.querySelectorAll("td");
             allLinks.forEach((elem) => {
-                elem.addEventListener("click", () => {
-                    layer.classList.add("js--hidden");
-                });
+                if (!elem.classList.contains("ui-datepicker-unselectable")) {
+                    elem.addEventListener("click", () => {
+                        layer.classList.add("js--hidden");
+                    });
+                }
+            });
+        });
+    });
+    var calendarInputs = document.querySelectorAll(".form__input-form__input");
+    calendarInputs.forEach((element) => {
+        element.addEventListener("focus", () => {
+            var layer = document.querySelector(".calendar-layer");
+            layer.addEventListener("click", () => {
+                layer.classList.add("js--hidden");
+            });
+            element.addEventListener("click", () => {
+                layer.classList.remove("js--hidden");
+            });
+            var calendar = document.querySelector(".ui-datepicker");
+            var allLinks = calendar.querySelectorAll("td");
+            allLinks.forEach((elem) => {
+                if (!elem.classList.contains("ui-datepicker-unselectable")) {
+                    elem.addEventListener("click", () => {
+                        layer.classList.add("js--hidden");
+                    });
+                }
             });
         });
     });
     // Убирание подложки
-}
 
-function formattedDate(date) {
-    var month = String(date.getMonth() + 1);
-    var day = String(date.getDate());
-    var year = String(date.getFullYear());
-    var year = year.replace("20", "");
-    if (month.length < 2) month = "0" + month;
-    if (day.length < 2) day = "0" + day;
-    return `${day}.${month}.${year}`;
-}
-var dateNew = new Date();
-console.log(formattedDate(dateNew));
-
-$(function() {
-    $.datepicker.regional["ru"] = {
-        closeText: "Закрыть",
-        prevText: "",
-        nextText: "",
-        currentText: "Сегодня",
-        monthNames: [
-            "Январь",
-            "Февраль",
-            "Март",
-            "Апрель",
-            "Май",
-            "Июнь",
-            "Июль",
-            "Август",
-            "Сентябрь",
-            "Октябрь",
-            "Ноябрь",
-            "Декабрь",
-        ],
-        monthNamesShort: [
-            "Январь",
-            "Февраль",
-            "Март",
-            "Апрель",
-            "Май",
-            "Июнь",
-            "Июль",
-            "Август",
-            "Сентябрь",
-            "Октябрь",
-            "Ноябрь",
-            "Декабрь",
-        ],
-        dayNames: [
-            "воскресенье",
-            "понедельник",
-            "вторник",
-            "среда",
-            "четверг",
-            "пятница",
-            "суббота",
-        ],
-        dayNamesShort: ["вск", "пнд", "втр", "срд", "чтв", "птн", "сбт"],
-        dayNamesMin: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
-        weekHeader: "Нед",
-        dateFormat: "dd.mm.yy",
-        firstDay: 1,
-        isRTL: false,
-        showMonthAfterYear: false,
-        yearSuffix: "",
-    };
-    $.datepicker.setDefaults($.datepicker.regional["ru"]);
-    var dateFormat = "dd.mm.yy",
-        from = $("#blockingInputStart")
-        .datepicker({
-                inline: true,
-                changeYear: true,
-                gotoCurrent: true,
-                dateFormat: "dd.mm.yy",
-                minDate: 0,
-                showAnim: "slideDown",
-                numberOfMonths: 1,
-            },
-            $.datepicker.regional["ru"]
-        )
-        .on("change", function() {
-            $("#blockingInputFinish").datepicker(
-                "option",
-                "minDate",
-                getDate(this)
+    $(function() {
+        $.datepicker.regional["ru"] = {
+            closeText: "Закрыть",
+            prevText: "",
+            nextText: "",
+            currentText: "Сегодня",
+            monthNames: [
+                "Январь",
+                "Февраль",
+                "Март",
+                "Апрель",
+                "Май",
+                "Июнь",
+                "Июль",
+                "Август",
+                "Сентябрь",
+                "Октябрь",
+                "Ноябрь",
+                "Декабрь",
+            ],
+            monthNamesShort: [
+                "Январь",
+                "Февраль",
+                "Март",
+                "Апрель",
+                "Май",
+                "Июнь",
+                "Июль",
+                "Август",
+                "Сентябрь",
+                "Октябрь",
+                "Ноябрь",
+                "Декабрь",
+            ],
+            dayNames: [
+                "воскресенье",
+                "понедельник",
+                "вторник",
+                "среда",
+                "четверг",
+                "пятница",
+                "суббота",
+            ],
+            dayNamesShort: ["вск", "пнд", "втр", "срд", "чтв", "птн", "сбт"],
+            dayNamesMin: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+            weekHeader: "Нед",
+            dateFormat: "dd.mm.yy",
+            firstDay: 1,
+            isRTL: false,
+            showMonthAfterYear: false,
+            yearSuffix: "",
+        };
+        $.datepicker.setDefaults($.datepicker.regional["ru"]);
+        var dateFormat = "dd.mm.yy",
+            from = $("#blockingInputStart")
+            .datepicker({
+                    inline: true,
+                    changeYear: true,
+                    gotoCurrent: true,
+                    dateFormat: "dd.mm.yy",
+                    minDate: 0,
+                    showAnim: "slideDown",
+                    numberOfMonths: 1,
+                },
+                $.datepicker.regional["ru"]
+            )
+            .on("change", function() {
+                $("#blockingInputFinish").datepicker(
+                    "option",
+                    "minDate",
+                    getDate(this)
+                );
+            }),
+            to = $("#blockingInputFinish").datepicker({
+                    inline: true,
+                    changeYear: true,
+                    gotoCurrent: true,
+                    showAnim: "slideDown",
+                    numberOfMonths: 1,
+                },
+                $.datepicker.regional["ru"]
             );
-        }),
-        to = $("#blockingInputFinish").datepicker({
-                inline: true,
-                changeYear: true,
-                gotoCurrent: true,
-                showAnim: "slideDown",
-                numberOfMonths: 1,
-            },
-            $.datepicker.regional["ru"]
-        );
 
-    function getDate(element) {
-        var date;
-        try {
-            date = $.datepicker.parseDate(dateFormat, element.value);
-        } catch (error) {
-            date = null;
-            console.log(date);
+        function getDate(element) {
+            var date;
+            try {
+                date = $.datepicker.parseDate(dateFormat, element.value);
+            } catch (error) {
+                date = null;
+                console.log(date);
+            }
+
+            return date;
         }
-
-        return date;
-    }
-});
+    });
+}
