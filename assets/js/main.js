@@ -221,8 +221,9 @@ console.log(window.innerWidth);
 
 if (window.innerWidth <= 1200) {
   var main = document.querySelector("main");
-  console.log(main);
   main.style.marginTop = "50px";
+} else {
+  document.querySelector(".header-section--mobile").classList.add("js--hidden");
 }
 
 var mobileButtonOpen = document.getElementById("openMenu");
