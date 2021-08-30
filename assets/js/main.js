@@ -215,7 +215,26 @@ if (document.querySelector(".blocking-form__input")) {
       return date;
     }
   });
-} // // header-swiper
+}
+
+console.log(window.innerWidth);
+
+if (window.innerWidth <= 1200) {
+  var main = document.querySelector("main");
+  console.log(main);
+  main.style.marginTop = "50px";
+}
+
+var mobileButtonOpen = document.getElementById("openMenu");
+var mobileButtonClose = document.getElementById("closeMenu");
+var navigationMenu = document.querySelector(".navigation-section--mobile");
+mobileButtonOpen.addEventListener("click", function () {
+  mobileButtonClose.classList.add("menu-open--opened");
+  navigationMenu.classList.toggle("js--transformed");
+});
+mobileButtonClose.addEventListener("click", function () {
+  navigationMenu.classList.toggle("js--transformed");
+}); // // header-swiper
 // var swiper = new Swiper('#main-swiper', {
 //   fadeEffect: {
 //     crossFade: true

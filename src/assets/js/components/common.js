@@ -257,3 +257,22 @@ if (document.querySelector(".blocking-form__input")) {
         }
     });
 }
+
+console.log(window.innerWidth);
+
+if (window.innerWidth <= 1200) {
+    var main = document.querySelector("main");
+    console.log(main);
+    main.style.marginTop = "50px";
+}
+
+var mobileButtonOpen = document.getElementById("openMenu");
+var mobileButtonClose = document.getElementById("closeMenu");
+var navigationMenu = document.querySelector(".navigation-section--mobile");
+mobileButtonOpen.addEventListener("click", () => {
+    mobileButtonClose.classList.add("menu-open--opened");
+    navigationMenu.classList.toggle("js--transformed");
+});
+mobileButtonClose.addEventListener("click", () => {
+    navigationMenu.classList.toggle("js--transformed");
+});

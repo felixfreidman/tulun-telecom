@@ -1,0 +1,41 @@
+mixin createMenuItem(itemName, itemLink)
+    li.navigation-menu__item
+         a(href=itemLink).navigation-menu__item-link=itemName
+.header-section--mobile
+    .logo-section
+        img(src="./assets/images/static/logo-mobile.svg", alt="Логотип компании")
+    .control-section
+        span.control-section__search
+            img(src="./assets/images/static/searchIcon.svg", alt="Логотип компании") 
+        span.control-section__menu-open#openMenu
+            span.menu-open#firstLine 
+            span.menu-open#secondLine 
+            span.menu-open#thirdLine 
+.navigation-section--mobile.js--transformed
+    .navigation-section__top
+        .logo-section
+            img(src="./assets/images/static/logo-mobile.svg", alt="Логотип компании") 
+        .control-section 
+            span.control-section__menu-open#closeMenu
+                span.menu-open#firstLine 
+                span.menu-open#secondLine 
+                span.menu-open#thirdLine 
+    .account-navigation
+        ul.navigation-menu
+            +createMenuItem("Лицевой счет", "./account.html")
+            +createMenuItem("Статистика", "./account-stats.html") 
+            +createMenuItem("Услуги", "./account-services.html")  
+            +createMenuItem("Оплата", "./account-pay.html")  
+            +createMenuItem("Операции с тарифами", "./account-rate.html") 
+            +createMenuItem("Обещанный платеж", "./account-credit.html") 
+            +createMenuItem("Добровольная блокировка", "./account-block.html") 
+            +createMenuItem("Документы", "./account-documents.html") 
+            +createMenuItem("Настройки", "./account-settings.html") 
+    form(action="./").log-section 
+        button.log-section__logoff-button Выйти из кабинета
+    form(action="./account-search.html").search-section--form    
+        .search-section
+            input#inputSearchField(type="text", name="accountSearchInput", placeholder="Поиск...", required).input-section__search-input
+    
+    
+    

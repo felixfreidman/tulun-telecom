@@ -5,3 +5,8 @@
 .item--checked {
     color: #DB3840 !important;
 }
+
+.js--transformed {
+    transform: translateY(-100vh);
+    transition: transform 0.3s ease;
+}

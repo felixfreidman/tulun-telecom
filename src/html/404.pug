@@ -7,9 +7,7 @@ html(lang="en")
         link(rel="stylesheet", href="./style.min.css")
         title Не найдено
     body.account-settings.account-error
-        mixin createMenuItem(itemName, itemLink)
-            li.navigation-menu__item
-                a(href=itemLink).navigation-menu__item-link=itemName
+        include ./navigation-mobile.pug
         main.account-main 
             include ./sidebar-temp.pug
             .notfound-container
