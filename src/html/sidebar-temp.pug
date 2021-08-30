@@ -7,11 +7,15 @@ mixin createMenuItem(itemName, itemLink)
             img(src="./assets/images/static/logo.svg", alt="Логотип компании")
         .account-navigation 
             ul.navigation-menu 
-                +createMenuItem("Лицевой счет", "./account.html") 
-                +createMenuItem("Статистика", "./account-stats.html") 
+                +createMenuItem("Лицевой счет", "./account.html")
+                li.navigation-menu__item
+                    a(href="#").navigation-menu__item-link Статистика
+                    .navigation-menu__item-container 
+                        a(href="./account-stats.html").navigation-menu__item-link Статистика
+                        a(href="./account-stats.html").navigation-menu__item-link Статистика
                 +createMenuItem("Услуги", "./account-services.html")  
                 +createMenuItem("Оплата", "./account-pay.html")  
-                +createMenuItem("Операции с тарифами", "./account-rate.html") 
+                +createMenuItem("Операции с тарифами", "./account-rate.html")
                 +createMenuItem("Обещанный платеж", "./account-credit.html") 
                 +createMenuItem("Добровольная блокировка", "./account-block.html") 
                 +createMenuItem("Документы", "./account-documents.html") 

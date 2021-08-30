@@ -1,3 +1,66 @@
+// TODO: Полифил для всех ES6 функций JS
+// Production steps of ECMA-262, Edition 5, 15.4.4.18
+// Reference: https://es5.github.io/#x15.4.4.18
+// Полифил forech
+if (!Array.prototype["forEach"]) {
+    Array.prototype.forEach = function(callback, thisArg) {
+        if (this == null) {
+            throw new TypeError(
+                "Array.prototype.forEach called on null or undefined"
+            );
+        }
+
+        var T, k;
+        // 1. Let O be the result of calling toObject() passing the
+        // |this| value as the argument.
+        var O = Object(this);
+
+        // 2. Let lenValue be the result of calling the Get() internal
+        // method of O with the argument "length".
+        // 3. Let len be toUint32(lenValue).
+        var len = O.length >>> 0;
+
+        // 4. If isCallable(callback) is false, throw a TypeError exception.
+        // See: https://es5.github.io/#x9.11
+        if (typeof callback !== "function") {
+            throw new TypeError(callback + " is not a function");
+        }
+
+        // 5. If thisArg was supplied, let T be thisArg; else let
+        // T be undefined.
+        if (arguments.length > 1) {
+            T = thisArg;
+        }
+
+        // 6. Let k be 0
+        k = 0;
+
+        // 7. Repeat, while k < len
+        while (k < len) {
+            var kValue;
+
+            // a. Let Pk be ToString(k).
+            //    This is implicit for LHS operands of the in operator
+            // b. Let kPresent be the result of calling the HasProperty
+            //    internal method of O with argument Pk.
+            //    This step can be combined with c
+            // c. If kPresent is true, then
+            if (k in O) {
+                // i. Let kValue be the result of calling the Get internal
+                // method of O with argument Pk.
+                kValue = O[k];
+
+                // ii. Call the Call internal method of callback with T as
+                // the this value and argument list containing kValue, k, and O.
+                callback.call(T, kValue, k, O);
+            }
+            // d. Increase k by 1.
+            k++;
+        }
+        // 8. return undefined
+    };
+}
+
 if (document.querySelector(".auth-form__recover")) {
     var recover_button = document.querySelector(".auth-form__recover");
     recover_button.addEventListener("click", () => {
@@ -115,8 +178,150 @@ if (document.getElementById("searchField")) {
         document.getElementById("emptyResult").classList.add("js--hidden");
     }
 }
+// Календарь для сортировки по платежам
+if (document.getElementById("paysInputStart")) {
+    // Добавление подложки
+    var calendarLabels = document.querySelectorAll(".stats-form__label");
+    calendarLabels.forEach((element) => {
+        element.addEventListener("click", () => {
+            var layer = document.querySelector(".calendar-layer");
+            layer.addEventListener("click", () => {
+                layer.classList.add("js--hidden");
+            });
+            element.addEventListener("click", () => {
+                layer.classList.remove("js--hidden");
+            });
+            var calendar = document.querySelector(".ui-datepicker");
+            var allLinks = calendar.querySelectorAll("td");
+            allLinks.forEach((elem) => {
+                if (!elem.classList.contains("ui-datepicker-unselectable")) {
+                    elem.addEventListener("click", () => {
+                        layer.classList.add("js--hidden");
+                    });
+                }
+            });
+        });
+    });
+    var calendarInputs = document.querySelectorAll(".form__input-form__input");
+    calendarInputs.forEach((element) => {
+        element.addEventListener("focus", () => {
+            var layer = document.querySelector(".calendar-layer");
+            layer.addEventListener("click", () => {
+                layer.classList.add("js--hidden");
+            });
+            element.addEventListener("click", () => {
+                layer.classList.remove("js--hidden");
+            });
+            var calendar = document.querySelector(".ui-datepicker");
+            var allLinks = calendar.querySelectorAll("td");
+            allLinks.forEach((elem) => {
+                if (!elem.classList.contains("ui-datepicker-unselectable")) {
+                    elem.addEventListener("click", () => {
+                        layer.classList.add("js--hidden");
+                    });
+                }
+            });
+        });
+    });
+    // Убирание подложки
 
-if (document.querySelector(".blocking-form__input")) {
+    $(function() {
+        $.datepicker.regional["ru"] = {
+            closeText: "Закрыть",
+            prevText: "",
+            nextText: "",
+            currentText: "Сегодня",
+            monthNames: [
+                "Январь",
+                "Февраль",
+                "Март",
+                "Апрель",
+                "Май",
+                "Июнь",
+                "Июль",
+                "Август",
+                "Сентябрь",
+                "Октябрь",
+                "Ноябрь",
+                "Декабрь",
+            ],
+            monthNamesShort: [
+                "Январь",
+                "Февраль",
+                "Март",
+                "Апрель",
+                "Май",
+                "Июнь",
+                "Июль",
+                "Август",
+                "Сентябрь",
+                "Октябрь",
+                "Ноябрь",
+                "Декабрь",
+            ],
+            dayNames: [
+                "воскресенье",
+                "понедельник",
+                "вторник",
+                "среда",
+                "четверг",
+                "пятница",
+                "суббота",
+            ],
+            dayNamesShort: ["вск", "пнд", "втр", "срд", "чтв", "птн", "сбт"],
+            dayNamesMin: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+            weekHeader: "Нед",
+            dateFormat: "dd.mm.yy",
+            firstDay: 1,
+            isRTL: false,
+            showMonthAfterYear: false,
+            yearSuffix: "",
+        };
+        $.datepicker.setDefaults($.datepicker.regional["ru"]);
+        var dateFormat = "dd.mm.yy",
+            from = $("#paysInputStart")
+            .datepicker({
+                    inline: true,
+                    changeYear: true,
+                    gotoCurrent: true,
+                    dateFormat: "dd.mm.yy",
+                    minDate: 0,
+                    showAnim: "slideDown",
+                    numberOfMonths: 1,
+                },
+                $.datepicker.regional["ru"]
+            )
+            .on("change", function() {
+                $("#paysInputFinish").datepicker("option", "minDate", getDate(this));
+            }),
+            to = $("#paysInputFinish").datepicker({
+                    inline: true,
+                    changeYear: true,
+                    gotoCurrent: true,
+                    dateFormat: "dd.mm.yy",
+                    minDate: 0,
+                    showAnim: "slideDown",
+                    numberOfMonths: 1,
+                },
+                $.datepicker.regional["ru"]
+            );
+
+        function getDate(element) {
+            var date;
+            try {
+                date = $.datepicker.parseDate(dateFormat, element.value);
+            } catch (error) {
+                date = null;
+                console.log(date);
+            }
+
+            return date;
+        }
+    });
+}
+
+// Календарь для блокировки
+if (document.getElementById("blockingInputStart")) {
     // Добавление подложки
     var calendarLabels = document.querySelectorAll(".blocking-form__label");
     calendarLabels.forEach((element) => {
@@ -239,6 +444,8 @@ if (document.querySelector(".blocking-form__input")) {
                     inline: true,
                     changeYear: true,
                     gotoCurrent: true,
+                    dateFormat: "dd.mm.yy",
+                    minDate: 0,
                     showAnim: "slideDown",
                     numberOfMonths: 1,
                 },
@@ -259,7 +466,6 @@ if (document.querySelector(".blocking-form__input")) {
     });
 }
 
-console.log(window.innerWidth);
 if (window.innerWidth <= 1200) {
     var main = document.querySelector("main");
     main.style.marginTop = "50px";
