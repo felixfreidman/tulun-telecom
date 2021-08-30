@@ -65,3 +65,31 @@
 .account-error {
     overflow: hidden;
 }
+
+@media (max-width: 1024px) {
+    .notfound-container {
+        width: 100vw;
+        height: 100vh;
+    }
+    .notfound-container .error-container {
+        max-width: 85%;
+        padding: 48px 20px 20px;
+    }
+}
+
+@media (max-width: 450px) {
+    .notfound-container .error-container .error-container__steps .error-container__step {
+        font-size: 18px;
+        line-height: 20px;
+    }
+    .notfound-container .notfound-container__header {
+        font-size: 60px;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 350px) {
+    .notfound-container .error-container {
+        padding: 30px 10px 10px;
+    }
+}

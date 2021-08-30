@@ -22,3 +22,31 @@
         }
     }
 }
+
+@media (max-width: 600px) {
+    .account-content__info-table--docs {
+        .info-table__header-row {
+            .info-table__header-column {
+                &:nth-child(2) {
+                    display: none;
+                }
+            }
+        }
+        .info-table__row-data {
+            .info-table__button {
+                display: block;
+                width: 80%;
+            }
+        }
+    }
+    .account-content__info-table--docs .info-table__content-row .info-table__row-data:nth-child(2) {
+        display: none;
+    }
+    .account-content__info-table .info-table__header-row .info-table__header-column {
+        width: 50%;
+    }
+    .account-content__info-table--docs .info-table__content-row .info-table__row-data:last-child,
+    .account-content__info-table--docs .info-table__header-row .info-table__header-column:last-child {
+        display: block;
+    }
+}

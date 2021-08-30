@@ -63,6 +63,7 @@
     }
     .result {
         display: flex;
+        flex-wrap: wrap;
         .results-container__header {
             font-weight: 600;
             font-size: 22px;
