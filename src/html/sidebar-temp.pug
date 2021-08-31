@@ -21,7 +21,7 @@ mixin createMenuItem(itemName, itemLink)
                 +createMenuItem("Документы", "./account-documents.html") 
                 +createMenuItem("Настройки", "./account-settings.html") 
         form(action="./").log-section 
-                button.log-section__logoff-button Выйти из кабинета
+            button.log-section__logoff-button Выйти из кабинета
         form(action="./account-search.html").search-section--form    
             .search-section
                 input#inputSearchField(type="text", name="accountSearchInput", placeholder="Поиск...", required).input-section__search-input

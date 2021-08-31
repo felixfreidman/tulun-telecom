@@ -5,7 +5,7 @@ mixin createMenuItem(itemName, itemLink)
     .logo-section
         img(src="./assets/images/static/logo-mobile.svg", alt="Логотип компании")
     .control-section
-        span.control-section__search
+        label(for="inputSearchFieldMobile").control-section__search#labelOpenMenu
             img(src="./assets/images/static/searchIcon.svg", alt="Логотип компании") 
         span.control-section__menu-open#openMenu
             span.menu-open#firstLine 
@@ -39,7 +39,7 @@ mixin createMenuItem(itemName, itemLink)
         button.log-section__logoff-button Выйти из кабинета
     form(action="./account-search.html").search-section--form    
         .search-section
-            input#inputSearchField(type="text", name="accountSearchInput", placeholder="Поиск...", required).input-section__search-input
+            input#inputSearchFieldMobile(type="text", name="accountSearchInput", placeholder="Поиск...", required).input-section__search-input
     
     
     

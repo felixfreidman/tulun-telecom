@@ -55,7 +55,18 @@ if (!Array.prototype["forEach"]) {
     } // 8. return undefined
 
   };
-}
+} // Полифил innerWidth
+
+
+window.getWindowSize = function () {
+  if (window.innerWidth != undefined) {
+    return [window.innerWidth, window.innerHeight];
+  } else {
+    var docBody = document.body,
+        docEle = document.documentElement;
+    return [Math.max(docEle.clientWidth, docBody.clientWidth), Math.max(docEle.clientHeight, docBody.clientHeight)];
+  }
+};
 
 if (document.querySelector(".auth-form__recover")) {
   var recover_button = document.querySelector(".auth-form__recover");
@@ -380,23 +391,31 @@ if (document.getElementById("blockingInputStart")) {
   });
 }
 
-if (window.innerWidth <= 1200) {
-  var main = document.querySelector("main");
-  main.style.marginTop = "50px";
-} else {
-  document.querySelector(".header-section--mobile").classList.add("js--hidden");
+if (document.querySelector(".header-section--mobile")) {
+  console.log(window.innerWidth);
+  console.log(window.getWindowSize);
+
+  if (window.innerWidth <= 1200 || window.getWindowSize <= 1200) {
+    var main = document.querySelector("main");
+    main.style.marginTop = "50px";
+  } else {
+    document.querySelector(".header-section--mobile").classList.add("js--hidden");
+  }
 }
 
-var mobileButtonOpen = document.getElementById("openMenu");
-var mobileButtonClose = document.getElementById("closeMenu");
-var navigationMenu = document.querySelector(".navigation-section--mobile");
-mobileButtonOpen.addEventListener("click", function () {
-  mobileButtonClose.classList.add("menu-open--opened");
-  navigationMenu.classList.toggle("js--transformed");
-});
-mobileButtonClose.addEventListener("click", function () {
-  navigationMenu.classList.toggle("js--transformed");
-}); // // header-swiper
+if (document.getElementById("openMenu")) {
+  var mobileButtonOpen = document.getElementById("openMenu");
+  var mobi;
+  var mobileButtonClose = document.getElementById("closeMenu");
+  var navigationMenu = document.querySelector(".navigation-section--mobile");
+  mobileButtonOpen.addEventListener("click", function () {
+    mobileButtonClose.classList.add("menu-open--opened");
+    navigationMenu.classList.toggle("js--transformed");
+  });
+  mobileButtonClose.addEventListener("click", function () {
+    navigationMenu.classList.toggle("js--transformed");
+  });
+} // // header-swiper
 // var swiper = new Swiper('#main-swiper', {
 //   fadeEffect: {
 //     crossFade: true
