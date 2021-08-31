@@ -204,7 +204,7 @@ if (document.getElementById("paysInputStart")) {
     });
     var calendarInputs = document.querySelectorAll(".form__input-form__input");
     calendarInputs.forEach((element) => {
-        element.addEventListener("focus", () => {
+        element.addEventListener("mouseenter", () => {
             var layer = document.querySelector(".calendar-layer");
             layer.addEventListener("click", () => {
                 layer.classList.add("js--hidden");
@@ -344,16 +344,16 @@ if (document.getElementById("blockingInputStart")) {
             });
         });
     });
-    var calendarInputs = document.querySelectorAll(".form__input-form__input");
+    var calendarInputs = document.querySelectorAll(".blocking-form__input");
+    console.log(calendarInputs);
     calendarInputs.forEach((element) => {
         element.addEventListener("focus", () => {
+            console.log("entered");
             var layer = document.querySelector(".calendar-layer");
             layer.addEventListener("click", () => {
                 layer.classList.add("js--hidden");
             });
-            element.addEventListener("click", () => {
-                layer.classList.remove("js--hidden");
-            });
+            layer.classList.remove("js--hidden");
             var calendar = document.querySelector(".ui-datepicker");
             var allLinks = calendar.querySelectorAll("td");
             allLinks.forEach((elem) => {

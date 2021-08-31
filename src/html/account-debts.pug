@@ -12,7 +12,7 @@ html(lang="en")
             include ./sidebar-temp.pug
             .account-content
                 h1.account-content__header Статистика по платежам
-                .account-content__filter-container
+                .account-content__filter-debts-container
                     .filter-container__header Фильтрация по датам:
                     form.stats-form 
                         label(for="paysInputStart").stats-form__label Начало:
@@ -22,20 +22,29 @@ html(lang="en")
                         button(type="submit").stats-form__button Отфильтровать  
                     .account-content__info-table
                         .info-table__header-row
-                            .info-table__header-column Номер операции
-                            .info-table__header-column Дата операции
+                            .info-table__header-column Услуга
+                            .info-table__header-column Месяц
+                            .info-table__header-column Год
+                            .info-table__header-column Цена
+                            .info-table__header-column Потребленный объем
+                            .info-table__header-column Единица измерения
                             .info-table__header-column Сумма
-                            .info-table__header-column Описание
                         .info-table__content-row 
-                            .info-table__row-data 3055390
-                            .info-table__row-data 2021-05-17 00:00:00
-                            .info-table__row-data.data-value 0,00
-                            .info-table__row-data ТЕСТОВЫЙ АБОНЕНТ
+                            .info-table__row-data Интернетпо тарифу 00_Минимальный 15000_300руб #1: Трафик (0.00 руб. Вх. 0.000 руб. Исх. 0.000 руб.)
+                            .info-table__row-data Июнь
+                            .info-table__row-data 2021
+                            .info-table__row-data 0,00
+                            .info-table__row-data 0.0222
+                            .info-table__row-data мб.
+                            .info-table__row-data 0,00
                         .info-table__content-row 
-                            .info-table__row-data 3055390
-                            .info-table__row-data 2021-05-17 00:00:00
-                            .info-table__row-data.data-value 0,00
-                            .info-table__row-data ТЕСТОВЫЙ АБОНЕНТ
+                            .info-table__row-data Интернетпо тарифу 00_Минимальный 15000_300руб #1: Трафик (0.00 руб. Вх. 0.000 руб. Исх. 0.000 руб.)
+                            .info-table__row-data Июнь
+                            .info-table__row-data 2021
+                            .info-table__row-data 0,00
+                            .info-table__row-data 0.0222
+                            .info-table__row-data мб.
+                            .info-table__row-data 0,00
         .calendar-layer.js--hidden    
         script(src="https://code.jquery.com/jquery-1.12.4.js")
         script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.js")

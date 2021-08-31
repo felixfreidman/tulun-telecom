@@ -23,7 +23,11 @@ mixin createMenuItem(itemName, itemLink)
     .account-navigation
         ul.navigation-menu
             +createMenuItem("Лицевой счет", "./account.html")
-            +createMenuItem("Статистика", "./account-stats.html") 
+            li.navigation-menu__item#complexNavItem
+                span.navigation-menu__item-span Статистика
+                .navigation-menu__item-container 
+                    a(href="./account-stats.html").navigation-menu__item-link Статистика по платежам
+                    a(href="./account-debts.html").navigation-menu__item-link Статистика по списаниям
             +createMenuItem("Услуги", "./account-services.html")  
             +createMenuItem("Оплата", "./account-pay.html")  
             +createMenuItem("Операции с тарифами", "./account-rate.html") 

@@ -19,9 +19,9 @@ html(lang="en")
                         span.blocking-container__price 350 руб 
                     form.blocking-form 
                         label(for="blockingInputStart").blocking-form__label Начало:
-                            input#blockingInputStart.blocking-form__input(type="text", name="blockingFieldStart", placeholder="01.04.2021", required)
+                            input#blockingInputStart.blocking-form__input(type="text", name="blockingFieldStart", placeholder="01.04.2021", required, readonly, autocomplete="off")
                         label(for="blockingInputFinish").blocking-form__label Конец:
-                            input#blockingInputFinish.blocking-form__input(type="text", name="blockingFieldFinish", placeholder="07.07.2021", required)
+                            input#blockingInputFinish.blocking-form__input(type="text", name="blockingFieldFinish", placeholder="07.07.2021", required, readonly, autocomplete="off")
                         button(type="submit").blocking-form__button Заблокировать
                     .blocking-container__warning Стоимость услуги в частном секторе составляет 6 руб./сутки.
         .calendar-layer.js--hidden

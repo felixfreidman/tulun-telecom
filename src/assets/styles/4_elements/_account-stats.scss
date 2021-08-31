@@ -66,3 +66,30 @@
         }
     }
 }
+
+.account-content__filter-debts-container {
+    .account-content__info-table {
+        .info-table__header-column {
+            border-right: 1px solid #cecaca;
+            padding: 17px 0px 16px 15px;
+            font-size: 16px;
+            line-height: 18px;
+            font-weight: 700;
+            &:last-child {
+                text-decoration: none;
+            }
+        }
+        .info-table__content-row {
+            border-bottom: 1px solid #cecaca;
+            .info-table__row-data {
+                border-right: 1px solid #cecaca;
+                padding: 15px 2px 0 15px;
+                font-size: 13px;
+                line-height: 18px;
+            }
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+}
