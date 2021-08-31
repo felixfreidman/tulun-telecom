@@ -108,8 +108,8 @@ if (document.querySelector(".form-return-login")) {
 if (document.querySelectorAll(".navigation-menu__item-link")) {
     var allLink = document.querySelectorAll(".navigation-menu__item-link");
     var currentLocation = window.location.href;
-
-    allLink.forEach((element) => {
+    var alltableArray = Array.prototype.slice.call(allLink);
+    alltableArray.forEach((element) => {
         var link = element.getAttribute("href");
         var formatedLink = link.replace("./", "");
         if (currentLocation.includes(formatedLink)) {
@@ -125,10 +125,11 @@ if (document.getElementById("rateSelect")) {
     var selectInputField = document.getElementById("rateSelect");
     var selectInputLabel = document.querySelector(".rate-form__label");
     var allOptionsArray = document.querySelectorAll(".rate-form__option");
+    var allOptionsArrayMod = Array.prototype.slice.call(allOptionsArray);
     var selectModalWindow = document.getElementById("rateModal");
     displaySelectValue();
     // По клику меняем значение data-checked
-    allOptionsArray.forEach((element) => {
+    allOptionsArrayMod.forEach((element) => {
         element.addEventListener("click", () => {
             uncheckEverySpan();
             element.setAttribute("data-checked", "checked");
@@ -151,7 +152,8 @@ if (document.getElementById("rateSelect")) {
 function displaySelectValue() {
     var selectInputField = document.getElementById("rateSelect");
     var allOptionsArray = document.querySelectorAll(".rate-form__option");
-    allOptionsArray.forEach((element) => {
+    var allOptionsArrayMod = Array.prototype.slice.call(allOptionsArray);
+    allOptionsArrayMod.forEach((element) => {
         var checkedBool = element.getAttribute("data-checked");
         if (checkedBool == "checked") {
             var checkedValue = element.textContent;
@@ -162,7 +164,8 @@ function displaySelectValue() {
 
 function uncheckEverySpan() {
     var allOptionsArray = document.querySelectorAll(".rate-form__option");
-    allOptionsArray.forEach((newElement) => {
+    var allOptionsArrayMod = Array.prototype.slice.call(allOptionsArray);
+    allOptionsArrayMod.forEach((newElement) => {
         newElement.setAttribute("data-checked", "unchecked");
     });
 }
@@ -195,7 +198,8 @@ if (document.getElementById("searchField")) {
 if (document.getElementById("paysInputStart")) {
     // Добавление подложки
     var calendarLabels = document.querySelectorAll(".stats-form__label");
-    calendarLabels.forEach((element) => {
+    var calendarLabelsArray = Array.prototype.slice.call(calendarLabels);
+    calendarLabelsArray.forEach((element) => {
         element.addEventListener("click", () => {
             var layer = document.querySelector(".calendar-layer");
             layer.addEventListener("click", () => {
@@ -206,7 +210,8 @@ if (document.getElementById("paysInputStart")) {
             });
             var calendar = document.querySelector(".ui-datepicker");
             var allLinks = calendar.querySelectorAll("td");
-            allLinks.forEach((elem) => {
+            var allLinksArray = Array.prototype.slice.call(allLinks);
+            allLinksArray.forEach((elem) => {
                 if (!elem.classList.contains("ui-datepicker-unselectable")) {
                     elem.addEventListener("click", () => {
                         layer.classList.add("js--hidden");
@@ -216,7 +221,8 @@ if (document.getElementById("paysInputStart")) {
         });
     });
     var calendarInputs = document.querySelectorAll(".form__input-form__input");
-    calendarInputs.forEach((element) => {
+    var calendarInputsArray = Array.prototype.slice.call(calendarInputs);
+    calendarInputsArray.forEach((element) => {
         element.addEventListener("mouseenter", () => {
             var layer = document.querySelector(".calendar-layer");
             layer.addEventListener("click", () => {
@@ -227,7 +233,8 @@ if (document.getElementById("paysInputStart")) {
             });
             var calendar = document.querySelector(".ui-datepicker");
             var allLinks = calendar.querySelectorAll("td");
-            allLinks.forEach((elem) => {
+            var allLinksArray = Array.prototype.slice.call(allLinks);
+            allLinksArray.forEach((elem) => {
                 if (!elem.classList.contains("ui-datepicker-unselectable")) {
                     elem.addEventListener("click", () => {
                         layer.classList.add("js--hidden");
@@ -337,7 +344,9 @@ if (document.getElementById("paysInputStart")) {
 if (document.getElementById("blockingInputStart")) {
     // Добавление подложки
     var calendarLabels = document.querySelectorAll(".blocking-form__label");
-    calendarLabels.forEach((element) => {
+    var allLinksArray = Array.prototype.slice.call(allLinks);
+    var calendarLabelsArray = Array.prototype.slice.call(calendarLabels);
+    calendarLabelsArray.forEach((element) => {
         element.addEventListener("click", () => {
             var layer = document.querySelector(".calendar-layer");
             layer.addEventListener("click", () => {
@@ -348,7 +357,8 @@ if (document.getElementById("blockingInputStart")) {
             });
             var calendar = document.querySelector(".ui-datepicker");
             var allLinks = calendar.querySelectorAll("td");
-            allLinks.forEach((elem) => {
+            var allLinksArray = Array.prototype.slice.call(allLinks);
+            allLinksArray.forEach((elem) => {
                 if (!elem.classList.contains("ui-datepicker-unselectable")) {
                     elem.addEventListener("click", () => {
                         layer.classList.add("js--hidden");
@@ -358,8 +368,8 @@ if (document.getElementById("blockingInputStart")) {
         });
     });
     var calendarInputs = document.querySelectorAll(".blocking-form__input");
-    console.log(calendarInputs);
-    calendarInputs.forEach((element) => {
+    var calendarInputsArray = Array.prototype.slice.call(calendarInputs);
+    calendarInputsArray.forEach((element) => {
         element.addEventListener("focus", () => {
             console.log("entered");
             var layer = document.querySelector(".calendar-layer");
@@ -369,7 +379,8 @@ if (document.getElementById("blockingInputStart")) {
             layer.classList.remove("js--hidden");
             var calendar = document.querySelector(".ui-datepicker");
             var allLinks = calendar.querySelectorAll("td");
-            allLinks.forEach((elem) => {
+            var allLinksArray = Array.prototype.slice.call(allLinks);
+            allLinksArray.forEach((elem) => {
                 if (!elem.classList.contains("ui-datepicker-unselectable")) {
                     elem.addEventListener("click", () => {
                         layer.classList.add("js--hidden");
@@ -480,8 +491,8 @@ if (document.getElementById("blockingInputStart")) {
 }
 if (document.querySelector(".header-section--mobile")) {
     console.log(window.innerWidth);
-    console.log(window.getWindowSize);
-    if (window.innerWidth <= 1200 || window.getWindowSize <= 1200) {
+    console.log(window.getWindowSize()[0]);
+    if (window.innerWidth <= 1200 || window.getWindowSize()[0] <= 1200) {
         var main = document.querySelector("main");
         main.style.marginTop = "50px";
     } else {
