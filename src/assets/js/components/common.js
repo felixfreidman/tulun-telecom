@@ -76,15 +76,17 @@ window.getWindowSize = function() {
 // Полифилл Includes
 if (!String.prototype.includes) {
     String.prototype.includes = function(search, start) {
-      'use strict';
-  
-      if (search instanceof RegExp) {
-        throw TypeError('first argument must not be a RegExp');
-      }
-      if (start === undefined) { start = 0; }
-      return this.indexOf(search, start) !== -1;
+        "use strict";
+
+        if (search instanceof RegExp) {
+            throw TypeError("first argument must not be a RegExp");
+        }
+        if (start === undefined) {
+            start = 0;
+        }
+        return this.indexOf(search, start) !== -1;
     };
-  }
+}
 if (document.querySelector(".auth-form__recover")) {
     var recover_button = document.querySelector(".auth-form__recover");
     recover_button.addEventListener("click", () => {
@@ -513,7 +515,8 @@ if (document.querySelector(".header-section--mobile")) {
 }
 if (document.getElementById("openMenu")) {
     var mobileButtonOpen = document.getElementById("openMenu");
-    var mobi;
+    var mobileButtonSearch = document.getElementById("labelOpenMenu");
+    var searchInput = document.getElementById("inputSearchFieldMobile");
     var mobileButtonClose = document.getElementById("closeMenu");
     var navigationMenu = document.querySelector(".navigation-section--mobile");
     mobileButtonOpen.addEventListener("click", () => {
@@ -522,5 +525,9 @@ if (document.getElementById("openMenu")) {
     });
     mobileButtonClose.addEventListener("click", () => {
         navigationMenu.classList.toggle("js--transformed");
+    });
+    mobileButtonSearch.addEventListener("click", () => {
+        navigationMenu.classList.toggle("js--transformed");
+        searchInput.focus();
     });
 }

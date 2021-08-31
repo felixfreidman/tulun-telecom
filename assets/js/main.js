@@ -71,10 +71,10 @@ window.getWindowSize = function () {
 
 if (!String.prototype.includes) {
   String.prototype.includes = function (search, start) {
-    'use strict';
+    "use strict";
 
     if (search instanceof RegExp) {
-      throw TypeError('first argument must not be a RegExp');
+      throw TypeError("first argument must not be a RegExp");
     }
 
     if (start === undefined) {
@@ -318,7 +318,6 @@ if (document.getElementById("paysInputStart")) {
 if (document.getElementById("blockingInputStart")) {
   // Добавление подложки
   var calendarLabels = document.querySelectorAll(".blocking-form__label");
-  var allLinksArray = Array.prototype.slice.call(allLinks);
   var calendarLabelsArray = Array.prototype.slice.call(calendarLabels);
   calendarLabelsArray.forEach(function (element) {
     element.addEventListener("click", function () {
@@ -434,7 +433,8 @@ if (document.querySelector(".header-section--mobile")) {
 
 if (document.getElementById("openMenu")) {
   var mobileButtonOpen = document.getElementById("openMenu");
-  var mobi;
+  var mobileButtonSearch = document.getElementById("labelOpenMenu");
+  var searchInput = document.getElementById("inputSearchFieldMobile");
   var mobileButtonClose = document.getElementById("closeMenu");
   var navigationMenu = document.querySelector(".navigation-section--mobile");
   mobileButtonOpen.addEventListener("click", function () {
@@ -443,6 +443,10 @@ if (document.getElementById("openMenu")) {
   });
   mobileButtonClose.addEventListener("click", function () {
     navigationMenu.classList.toggle("js--transformed");
+  });
+  mobileButtonSearch.addEventListener("click", function () {
+    navigationMenu.classList.toggle("js--transformed");
+    searchInput.focus();
   });
 } // // header-swiper
 // var swiper = new Swiper('#main-swiper', {
