@@ -355,7 +355,6 @@ if (document.getElementById("paysInputStart")) {
 if (document.getElementById("blockingInputStart")) {
     // Добавление подложки
     var calendarLabels = document.querySelectorAll(".blocking-form__label");
-    var allLinksArray = Array.prototype.slice.call(allLinks);
     var calendarLabelsArray = Array.prototype.slice.call(calendarLabels);
     calendarLabelsArray.forEach((element) => {
         element.addEventListener("click", () => {
