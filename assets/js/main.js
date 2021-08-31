@@ -3,7 +3,7 @@
 // TODO: Полифил для всех ES6 функций JS
 // Production steps of ECMA-262, Edition 5, 15.4.4.18
 // Reference: https://es5.github.io/#x15.4.4.18
-// Полифил forech
+// Полифилл forech
 if (!Array.prototype["forEach"]) {
   Array.prototype.forEach = function (callback, thisArg) {
     if (this == null) {
@@ -55,7 +55,7 @@ if (!Array.prototype["forEach"]) {
     } // 8. return undefined
 
   };
-} // Полифил innerWidth
+} // Полифилл innerWidth
 
 
 window.getWindowSize = function () {
@@ -66,7 +66,24 @@ window.getWindowSize = function () {
         docEle = document.documentElement;
     return [Math.max(docEle.clientWidth, docBody.clientWidth), Math.max(docEle.clientHeight, docBody.clientHeight)];
   }
-};
+}; // Полифилл Includes
+
+
+if (!String.prototype.includes) {
+  String.prototype.includes = function (search, start) {
+    'use strict';
+
+    if (search instanceof RegExp) {
+      throw TypeError('first argument must not be a RegExp');
+    }
+
+    if (start === undefined) {
+      start = 0;
+    }
+
+    return this.indexOf(search, start) !== -1;
+  };
+}
 
 if (document.querySelector(".auth-form__recover")) {
   var recover_button = document.querySelector(".auth-form__recover");
