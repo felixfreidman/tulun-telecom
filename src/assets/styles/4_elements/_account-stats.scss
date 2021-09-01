@@ -168,7 +168,8 @@
             min-width: calc(33% - 19px);
             padding-top: 21px;
             padding-bottom: 23px;
-            border: none !important;
+            border-top: none;
+            border-left: none;
             border-bottom: 1px solid #cecaca;
             border-right: 1px solid #cecaca;
         }
