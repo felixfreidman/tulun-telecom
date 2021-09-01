@@ -75,7 +75,7 @@
     box-shadow: 0px 10px 20px rgba(130, 143, 169, 0.3);
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     transition: transform 0.3s ease;
     overflow-y: scroll;
     .navigation-menu__item {
