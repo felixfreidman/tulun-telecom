@@ -133,7 +133,7 @@
 }
 
 .account-content__info-table--mobile {
-    pointer-events: none;
+    // pointer-events: none;
     .info-table__header-row .info-table__header-column:last-child {
         text-decoration: none;
     }
@@ -161,11 +161,16 @@
     .account-content__info-table--mobile {
         width: auto;
         .info-table__content-row .info-table__row-data {
-            min-width: 25%;
+            min-width: calc(33% - 19px);
+            padding-top: 21px;
+            padding-bottom: 23px;
+            border-bottom: 1px solid #cecaca;
+            border-top: none;
+            border-left: none;
         }
         .info-table__header-row .info-table__header-column {
-            padding: 11px 16px 11px 19px !important;
-            min-width: 22%;
+            padding: 11px 15px!important;
+            min-width: calc(33% - 30px);
             font-size: 14px !important;
             line-height: 12px !important;
         }
@@ -195,48 +200,3 @@
         display: block;
     }
 }
-
-@media (max-width: 520px) {
-    .account-content__info-table--mobile {
-        width: auto;
-        .info-table__content-row .info-table__row-data {
-            min-width: 25%;
-        }
-        .info-table__header-row .info-table__header-column {
-            padding: 11px 14px 11px 19px !important;
-            min-width: 22%;
-        }
-    }
-}
-
-@media (max-width: 520px) {
-    .account-content__info-table--mobile {
-        width: auto;
-        .info-table__content-row .info-table__row-data {
-            min-width: 25%;
-        }
-        .info-table__header-row .info-table__header-column {
-            padding: 11px 16px 11px 19px !important;
-            min-width: 21%;
-        }
-    }
-}
-
-@media (max-width: 376px) {
-    .account-content__info-table--mobile {
-        width: auto;
-        .info-table__content-row .info-table__row-data {
-            min-width: 25%;
-        }
-        .info-table__header-row .info-table__header-column {
-            padding: 11px 16px 11px 16px !important;
-            min-width: 21%;
-        }
-    }
-}
-
-// @media (max-width: 450px) {
-//     .account-content__info-table--mobile {
-//         max-width: px;
-//     }
-// }
