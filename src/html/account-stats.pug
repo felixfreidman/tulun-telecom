@@ -8,11 +8,13 @@ html(lang="en")
         title Personal Account
     body.account-settings
         include ./navigation-mobile.pug
-        main.account-main 
+        main.account-main.statistic--mobile 
             include ./sidebar-temp.pug
             .account-content
                 h1.account-content__header Статистика по платежам
-                .account-content__filter-container
+                .account-content__filter-container.stats--mobile
+                    span.slider-button.slider-button--next#nextStepSlider
+                    span.slider-button.slider-button--prev.js--hidden#previousStepSlider
                     .filter-container__header Фильтрация по датам:
                     form.stats-form 
                         label(for="paysInputStart").stats-form__label Начало:
@@ -21,6 +23,7 @@ html(lang="en")
                             input#paysInputFinish.stats-form__input(type="text", name="paysFieldFinish", placeholder="07.07.2021", required, readonly, autocomplete="off")
                         button(type="submit").stats-form__button Отфильтровать  
                     .account-content__info-table.account-content__info-table--mobile
+                        
                         .info-table__header-row
                             .info-table__header-column Номер операции
                             .info-table__header-column Дата операции

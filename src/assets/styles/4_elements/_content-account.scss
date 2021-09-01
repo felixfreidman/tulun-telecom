@@ -1,5 +1,5 @@
 body {
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .account-content {
@@ -186,7 +186,7 @@ input:hover {
 
 @media (max-width: 1200px) {
     .account-content {
-        padding-right: 26px;
+        padding-right: 0;
     }
     .account-sidebar {
         display: none;

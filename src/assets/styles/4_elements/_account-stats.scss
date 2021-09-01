@@ -67,6 +67,20 @@
     }
 }
 
+.statistic--mobile {
+    .account-content {
+        max-width: 90%;
+    }
+}
+
+.account-content__info-table--mobile {
+    max-width: 98%;
+}
+
+.account-content__header {
+    max-width: 80%;
+}
+
 .account-content__filter-debts-container {
     .account-content__info-table {
         .info-table__header-column {
@@ -94,8 +108,41 @@
     }
 }
 
-.account-content__info-table--mobile .info-table__header-row .info-table__header-column:last-child {
-    text-decoration: none;
+.stats--mobile {
+    position: relative;
+    .slider-button {
+        width: 24px;
+        height: 24px;
+        background-color: #d22730;
+        display: inline-block;
+        border-radius: 50%;
+        position: absolute;
+        top: 75%;
+        background-image: url("./assets/images/static/sliderArrow.svg");
+        background-repeat: no-repeat;
+        background-size: 40%;
+        background-position: center;
+        &--next {
+            right: 0px;
+        }
+        &--prev {
+            left: -10px;
+            transform: rotate(-180deg) !important;
+        }
+    }
+}
+
+.account-content__info-table--mobile {
+    pointer-events: none;
+    .info-table__header-row .info-table__header-column:last-child {
+        text-decoration: none;
+    }
+}
+
+@media (max-width: 1200px) {
+    .account-content__info-table--mobile {
+        width: auto;
+    }
 }
 
 @media (max-width: 620px) {
@@ -109,6 +156,18 @@
         }
         .stats-form__button {
             width: 97%;
+        }
+    }
+    .account-content__info-table--mobile {
+        width: auto;
+        .info-table__content-row .info-table__row-data {
+            min-width: 25%;
+        }
+        .info-table__header-row .info-table__header-column {
+            padding: 11px 16px 11px 19px !important;
+            min-width: 22%;
+            font-size: 14px !important;
+            line-height: 12px !important;
         }
     }
     .account-content__info-table--mobile {
@@ -131,16 +190,53 @@
             .info-table__row-data:last-child {}
         }
     }
+    .account-content__info-table .info-table__content-row .info-table__row-data:last-child,
+    .account-content__info-table .info-table__header-row .info-table__header-column:last-child {
+        display: block;
+    }
 }
 
 @media (max-width: 520px) {
     .account-content__info-table--mobile {
-        max-width: 400px;
+        width: auto;
+        .info-table__content-row .info-table__row-data {
+            min-width: 25%;
+        }
+        .info-table__header-row .info-table__header-column {
+            padding: 11px 14px 11px 19px !important;
+            min-width: 22%;
+        }
     }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 520px) {
     .account-content__info-table--mobile {
-        max-width: 260px;
+        width: auto;
+        .info-table__content-row .info-table__row-data {
+            min-width: 25%;
+        }
+        .info-table__header-row .info-table__header-column {
+            padding: 11px 16px 11px 19px !important;
+            min-width: 21%;
+        }
     }
 }
+
+@media (max-width: 376px) {
+    .account-content__info-table--mobile {
+        width: auto;
+        .info-table__content-row .info-table__row-data {
+            min-width: 25%;
+        }
+        .info-table__header-row .info-table__header-column {
+            padding: 11px 16px 11px 16px !important;
+            min-width: 21%;
+        }
+    }
+}
+
+// @media (max-width: 450px) {
+//     .account-content__info-table--mobile {
+//         max-width: px;
+//     }
+// }

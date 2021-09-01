@@ -543,3 +543,59 @@ complexNavigationItem.addEventListener("click", () => {
     navigationContainer.classList.toggle("js--hidden");
 });
 
+if (document.getElementById("nextStepSlider")) {
+    var nextStepSlider = document.getElementById("nextStepSlider");
+    var prevStepSlider = document.getElementById("previousStepSlider");
+    var headerRow = document.querySelector(".info-table__header-row");
+    headerRow.style.transform = "translateX(0)";
+    var contentRow = document.querySelectorAll(".info-table__content-row");
+    var counter = 0;
+    nextStepSlider.addEventListener("click", () => {
+        var headerTrans = headerRow.getAttribute("style");
+
+        var numb = headerTrans.match(/\d/g);
+        numb = numb.join("");
+        counter = parseInt(numb);
+        if (headerTrans.includes("-") || headerTrans.includes("(0px")) {
+            counter *= -1;
+            headerRow.style.transform = `translateX(${counter - 15}px)`;
+            counter = counter + 15;
+        } else if (counter > 0) {
+            headerRow.style.transform = `translateX(${counter - 15}px)`;
+            counter = counter + 15;
+        }
+        console.log(counter - 15);
+        if (counter - 15 !== 0 || counter == 15) {
+            if (prevStepSlider.classList.contains("js--hidden")) {
+                prevStepSlider.classList.remove("js--hidden");
+            }
+        } else {
+            if (!prevStepSlider.classList.contains("js--hidden")) {
+                prevStepSlider.classList.add("js--hidden");
+            }
+        }
+    });
+    prevStepSlider.addEventListener("click", () => {
+        var headerTrans = headerRow.getAttribute("style");
+        var numb = headerTrans.match(/\d/g);
+        numb = numb.join("");
+        counter = parseInt(numb);
+        if (headerTrans.includes("-")) {
+            counter *= -1;
+        }
+
+        headerRow.style.transform = `translateX(${counter + 15}px)`;
+        counter = counter + 15;
+        if (counter !== 0 || counter == 15) {
+            if (prevStepSlider.classList.contains("js--hidden")) {
+                prevStepSlider.classList.remove("js--hidden");
+            }
+        } else {
+            if (!prevStepSlider.classList.contains("js--hidden")) {
+                prevStepSlider.classList.add("js--hidden");
+            }
+        }
+    });
+    // var contentRowArray = Array.prototype.slice.call(contentRow);
+    // contentRowArray.forEach((element) => {});
+}
