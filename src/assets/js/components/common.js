@@ -522,13 +522,16 @@ if (document.getElementById("openMenu")) {
     mobileButtonOpen.addEventListener("click", () => {
         mobileButtonClose.classList.add("menu-open--opened");
         navigationMenu.classList.toggle("js--transformed");
+        document.querySelector("main").classList.toggle("js--hidden");
     });
     mobileButtonClose.addEventListener("click", () => {
         navigationMenu.classList.toggle("js--transformed");
+        document.querySelector("main").classList.toggle("js--hidden");
     });
     mobileButtonSearch.addEventListener("click", () => {
         navigationMenu.classList.toggle("js--transformed");
         searchInput.focus();
+        document.querySelector("main").classList.toggle("js--hidden");
     });
 }
 

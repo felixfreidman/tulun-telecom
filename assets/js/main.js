@@ -440,13 +440,16 @@ if (document.getElementById("openMenu")) {
   mobileButtonOpen.addEventListener("click", function () {
     mobileButtonClose.classList.add("menu-open--opened");
     navigationMenu.classList.toggle("js--transformed");
+    document.querySelector("main").classList.toggle("js--hidden");
   });
   mobileButtonClose.addEventListener("click", function () {
     navigationMenu.classList.toggle("js--transformed");
+    document.querySelector("main").classList.toggle("js--hidden");
   });
   mobileButtonSearch.addEventListener("click", function () {
     navigationMenu.classList.toggle("js--transformed");
     searchInput.focus();
+    document.querySelector("main").classList.toggle("js--hidden");
   });
 }
 
