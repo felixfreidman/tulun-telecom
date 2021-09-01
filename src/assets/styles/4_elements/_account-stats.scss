@@ -138,7 +138,11 @@
         text-decoration: none;
     }
 }
-
+.statistic--mobile {
+.info-table__content-row {
+    border: none;
+}
+}
 @media (max-width: 1200px) {
     .account-content__info-table--mobile {
         width: auto;
@@ -164,9 +168,9 @@
             min-width: calc(33% - 19px);
             padding-top: 21px;
             padding-bottom: 23px;
+            border: none !important;
             border-bottom: 1px solid #cecaca;
-            border-top: none;
-            border-left: none;
+            border-right: 1px solid #cecaca;
         }
         .info-table__header-row .info-table__header-column {
             padding: 11px 15px!important;
