@@ -77,6 +77,7 @@
     align-items: center;
     justify-content: space-between;
     transition: transform 0.3s ease;
+    overflow-y: scroll;
     .navigation-menu__item {
         margin-bottom: 15px;
     }
