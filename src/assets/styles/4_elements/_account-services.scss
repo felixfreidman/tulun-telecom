@@ -61,3 +61,31 @@
         font-size: 20px;
     }
 }
+
+@media (max-width: 500px) {
+    .container-toggler__handler {
+        font-size: 16px;
+    }
+    .service-content {
+        .account-content__info-container .info-container__row .info-container__data-name,
+        .account-content__info-container .info-container__row .info-container__data-value {
+            font-size: 14px;
+        }
+        .info-container__data-empty {
+            font-size: 14px;
+        }
+    }
+}
+
+@media (max-width: 380px) {
+    .service-content {
+        .account-content__info-container .info-container__row .info-container__data-name,
+        .account-content__info-container .info-container__row .info-container__data-value {
+            font-size: 12px;
+            line-height: 16px;
+        }
+        .account-content__info-container .info-container__row {
+            padding-right: 15px;
+        }
+    }
+}

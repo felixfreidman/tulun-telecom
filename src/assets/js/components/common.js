@@ -531,3 +531,11 @@ if (document.getElementById("openMenu")) {
         searchInput.focus();
     });
 }
+
+var complexNavigationItem = document.getElementById("complexNavItem");
+var navigationContainer = document.querySelector(
+    ".navigation-menu__item-container"
+);
+complexNavigationItem.addEventListener("click", () => {
+    navigationContainer.classList.toggle("js--hidden");
+});

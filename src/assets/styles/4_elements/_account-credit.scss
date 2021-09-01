@@ -16,3 +16,21 @@
         cursor: pointer;
     }
 }
+
+@media (max-width: 414px) {
+    .account-content__button-action {
+        font-size: 17px;
+    }
+    .account-content__header {
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+    .container-toggler__handler {
+        font-size: 11px;
+        line-height: 16px;
+    }
+    #serviceControl:checked~.account-content__container-toggler>label[for=serviceControl],
+    #serviceInlined:checked~.account-content__container-toggler>label[for=serviceInlined] {
+        border-bottom: 3px solid #d22730;
+    }
+}

@@ -148,13 +148,47 @@
     }
     .account-content__pay-container .pay-container__pay-block {
         padding: 16px;
+        width: 90%;
+        .pay-form {
+            .pay-form__input {
+                min-width: 134%;
+            }
+            .pay-form__button {
+                min-width: 120%;
+            }
+        }
+        .pay-block__header {
+            font-size: 20px;
+            line-height: 20px;
+        }
     }
     .payment-options__option {
         img {
             max-width: 100%;
         }
     }
+    .account-content__pay-section {
+        width: 100%;
+        .pay-section__header {
+            font-size: 19px;
+        }
+        .pay-section__subheader {
+            font-size: 15px;
+        }
+        .contract-text__help-text {
+            font-size: 13px;
+        }
+        .contract-text__contract-number {
+            font-size: 17px;
+        }
+    }
     .account-content__pay-section .pay-section__noting-container {
         width: 100%;
+        font-size: 16px;
+        line-height: 20px;
+        .noting-container__beware-note {
+            font-size: 18px;
+            line-height: 16px;
+        }
     }
 }

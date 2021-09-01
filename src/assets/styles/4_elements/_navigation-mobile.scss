@@ -70,7 +70,7 @@
     left: 0;
     padding: 18px;
     width: calc(100vw - 36px);
-    height: calc(100vh - 36px);
+    min-height: calc(100vh - 36px);
     background-color: #fff;
     box-shadow: 0px 10px 20px rgba(130, 143, 169, 0.3);
     display: flex;

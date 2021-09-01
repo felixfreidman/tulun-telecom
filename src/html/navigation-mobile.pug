@@ -25,7 +25,7 @@ mixin createMenuItem(itemName, itemLink)
             +createMenuItem("Лицевой счет", "./account.html")
             li.navigation-menu__item#complexNavItem
                 span.navigation-menu__item-span Статистика
-                .navigation-menu__item-container 
+                .navigation-menu__item-container.js--hidden 
                     a(href="./account-stats.html").navigation-menu__item-link Статистика по платежам
                     a(href="./account-debts.html").navigation-menu__item-link Статистика по списаниям
             +createMenuItem("Услуги", "./account-services.html")  

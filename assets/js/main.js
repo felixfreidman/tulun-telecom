@@ -448,7 +448,13 @@ if (document.getElementById("openMenu")) {
     navigationMenu.classList.toggle("js--transformed");
     searchInput.focus();
   });
-} // // header-swiper
+}
+
+var complexNavigationItem = document.getElementById("complexNavItem");
+var navigationContainer = document.querySelector(".navigation-menu__item-container");
+complexNavigationItem.addEventListener("click", function () {
+  navigationContainer.classList.toggle("js--hidden");
+}); // // header-swiper
 // var swiper = new Swiper('#main-swiper', {
 //   fadeEffect: {
 //     crossFade: true
