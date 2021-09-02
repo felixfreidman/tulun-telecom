@@ -1,0 +1,35 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="./style.min.css")
+        title Неподходящий тариф
+    body.internet-access
+        main.internet-main.internet-main--rate
+            .custom-error-container 
+                .custom-error__logo-section 
+                    img(src="./assets/images/static/block-logo.svg", alt="")
+                .custom-error__header Доступ в интернет ограничен
+                .custom-error__error-description
+                    | Вы пользуетесь тарифом телевидения, выход в интернет не доступен. Запустите приложение IPTVPORTAL для просмотра телеканалов, или подключите тарифный план для выхода в интернет. Подробнее по телефону:
+                    a(href="tel:79501000979").custom-error__link--mobile +7 (950) 1000-979 
+                .custom-error__error-manual 
+                    ul 
+                        li
+                            a(href="#").custom-error__link Подключить
+                            |  интернет
+                        li
+                            a(href="#").custom-error__link Подключить
+                            |  тематическое телевидение
+                        li
+                            a(href="#").custom-error__link Подключить
+                            |  дополнительный пакет каналов
+                .custom-error-row 
+                    a(href="./account.html", target="_self").custom-error__navigation-link Личный кабинет
+                    a(href="#").custom-error__manual-link Способы оплаты
+                a(href="https://t-tk.ru", target="_self").custom-error__company-link www.t-tk.ru
+
+        script(src="./assets/js/main.min.js")   
+                

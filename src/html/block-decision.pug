@@ -1,0 +1,27 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="./style.min.css")
+        title Добровольная блокировка
+    body.internet-access
+        main.internet-main.internet-main--decision
+            .custom-error-container 
+                .custom-error__logo-section 
+                    img(src="./assets/images/static/block-logo.svg", alt="")
+                .custom-error__header Доступ в интернет ограничен
+                .custom-error__error-description
+                    | Вы активировали добровольную блокировку услуги Интернет. 
+                    | Отключить добровольную блокировку вы можете в личном кабинете или позвонив по номеру — 
+                    a(href="tel:79501000979").custom-error__link--mobile +7 (950) 1000-979 
+                .custom-error__error-manual 
+                    |Инструкция для разблокировки по 
+                    a(href="#").custom-error__link ссылке
+                a(href="./account.html", target="_self").custom-error__navigation-link Личный кабинет
+                a(href="https://t-tk.ru", target="_self").custom-error__company-link www.t-tk.ru
+
+        script(src="./assets/js/main.min.js")   
+                
+                

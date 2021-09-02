@@ -1,0 +1,40 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="./style.min.css")
+        title Заблокированный ресурс
+    body.internet-access
+        main.internet-main.internet-main--gov
+            .custom-error-container 
+                .custom-error__logo-section 
+                    img(src="./assets/images/static/block-logo.svg", alt="")
+                .custom-error__subheader Вы обратились к ресурсу, который заблокирован согласно федеральному законодательству
+                .custom-error__error-description
+                    span 
+                        | ЕДИНЫЙ РЕЕСТР доменных имён, указателей страниц сайтов в сети «Интернет» и сетевых адресов, содержащие информацию, распространение которой в Российской Федерации запрещено. Действует на основании федерального закона от 28.07.2012 N 139-ФЗ
+                        | Проверить ресурс на сайте РОСКОМНАДЗОРа 
+                        a(href="http://eais.rkn.gov.ru/").custom-error__link http://eais.rkn.gov.ru/
+                    span
+                        | РЕЕСТР доменных имён, указателей страниц сайтов в сети «Интернет» и сетевых адресов, позволяющих идентифицировать сайты в сети «Интернет», содержащие информацию, распространяемую с нарушением исключительных прав. Действует на основании федерального закона от 2 июля 2013 года № 187-ФЗ 
+                        br
+                        | Проверить ресурс на сайте РОСКОМНАДЗОРа 
+                        a(href="http://nap.rkn.gov.ru/reestr/").custom-error__link http://nap.rkn.gov.ru/reestr/
+                    span 
+                        | ФЕДЕРАЛЬНЫЙ СПИСОК экстремистских материалов.
+                        br
+                        | Действует на основании статьи 13 Федерального закона 
+                        br
+                        | от 25.07.2002 № 114-ФЗ
+                    span
+                        | Проверить ресурс на сайте МИНИСТЕРСТВА ЮСТИЦИИ РФ 
+                        a(href="http://minjust.ru/ru/extremist-materials").custom-error__link http://minjust.ru/ru/extremist-materials
+                    span
+                        | Если вы считаете, что запрашиваемый вами материал заблокирован некорректно — обратитесь в 
+                        a(href="#").custom-error__link службу технической поддержки.
+                a(href="./account.html", target="_self").custom-error__navigation-link Личный кабинет
+                a(href="https://t-tk.ru", target="_self").custom-error__company-link www.t-tk.ru
+
+        script(src="./assets/js/main.min.js")   

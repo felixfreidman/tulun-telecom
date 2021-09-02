@@ -1,0 +1,25 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="./style.min.css")
+        title Недостаточно денег
+    body.internet-access
+        main.internet-main.internet-main--money
+            .custom-error-container 
+                .custom-error__logo-section 
+                    img(src="./assets/images/static/block-logo.svg", alt="")
+                .custom-error__header Доступ в интернет ограничен
+                .custom-error__error-description
+                    | На вашем счете недостаточно средств для продления услуги.
+                    | Вы можете пополнить свой баланс или взять обещанный платеж на три дня. 
+                    
+                
+                .custom-error-row 
+                    a(href="./account.html", target="_self").custom-error__navigation-link Пополнить баланс
+                    a(href="#").custom-error__manual-link Взять обещанный платеж
+                a(href="https://t-tk.ru", target="_self").custom-error__company-link www.t-tk.ru
+
+        script(src="./assets/js/main.min.js")   
