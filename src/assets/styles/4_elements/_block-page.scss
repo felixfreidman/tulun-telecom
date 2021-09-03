@@ -154,3 +154,74 @@
         }
     }
 }
+
+// Мобильные стили
+@media (max-width: 600px) {
+    .custom-error-container {
+        padding: 30px;
+    }
+    .internet-main--gov .custom-error-container {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 550px) {
+    .custom-error-container {
+        max-width: 360px;
+        .custom-error__navigation-link,
+        .custom-error-row .custom-error__manual-link {
+            font-size: 13px;
+        }
+        .custom-error-row {
+            margin-bottom: 10px;
+        }
+        .custom-error__header,
+        .custom-error__subheader {
+            font-size: 28px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    }
+    .internet-main--money .custom-error-container .custom-error__error-description {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+    .custom-error-container .custom-error__navigation-link {
+        margin-bottom: 10px;
+    }
+    .custom-error-container .custom-error__error-manual {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 414px) {
+    .custom-error-container .custom-error-row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .custom-error-container .custom-error-row .custom-error__manual-link {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    .custom-error-container .custom-error__header {
+        font-size: 30px;
+        line-height: 33px;
+    }
+    .internet-main--money .custom-error-container .custom-error__error-description {
+        font-size: 14px;
+        line-height: 16px;
+    }
+    .custom-error-container .custom-error__error-description {
+        font-size: 13px;
+    }
+    .custom-error-container .custom-error__error-description span {
+        font-size: 10px;
+        line-height: 10px;
+        margin-bottom: 10px;
+    }
+    .custom-error-container .custom-error__subheader {
+        font-size: 20px;
+        line-height: 21px;
+    }
+}
