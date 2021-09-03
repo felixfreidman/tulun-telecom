@@ -18,11 +18,21 @@
 	<!--[if lt IE 9]>
 	<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/html5.js?ver=3.7.0"></script>
 	<![endif]-->
+	
+	
+	
 	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
+<div class="header-section--mobile">
+    <div class="logo-section"><img src="http://ttktest.hostfl.ru//wp-content/themes/twentyfifteen/assets/images/static/logo-mobile.svg" alt="Логотип компании"></div>
+    <div class="control-section"><label class="control-section__search" for="inputSearchFieldMobile" id="labelOpenMenu"><img src="http://ttktest.hostfl.ru//wp-content/themes/twentyfifteen/assets/images/static/searchIcon.svg" alt="Логотип компании"></label><span class="control-section__menu-open" id="openMenu"><span class="menu-open" id="firstLine"> </span>
+        <span
+            class="menu-open" id="secondLine"> </span><span class="menu-open" id="thirdLine"> </span></span>
+    </div>
+</div>
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentyfifteen' ); ?></a>
 
@@ -53,5 +63,5 @@
 
 		<?php get_sidebar(); ?>
 	</div><!-- .sidebar -->
-
+	
 	<div id="content" class="site-content">
