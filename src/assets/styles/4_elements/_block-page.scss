@@ -1,17 +1,13 @@
-.internet-access {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
-    font-family: 'TT Commons';
-}
+
 
 .internet-main {
+    font-family: 'TT Commons';
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    min-width: 100vw;
+    min-height: 100vh;
     width: 100%;
     height: 100%;
     background-position: center;
@@ -214,6 +210,7 @@
     }
     .custom-error-container .custom-error__error-description {
         font-size: 13px;
+        margin-bottom: 0;
     }
     .custom-error-container .custom-error__error-description span {
         font-size: 10px;
@@ -223,5 +220,8 @@
     .custom-error-container .custom-error__subheader {
         font-size: 20px;
         line-height: 21px;
+    }
+    .custom-error-container .custom-error__navigation-link {
+        padding: 4px 15px;
     }
 }
