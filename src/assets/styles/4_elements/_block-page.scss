@@ -5,8 +5,9 @@
     align-items: center;
     justify-content: center;
     width: 100vw;
-    height: 100vh;
-    overflow: hidden;
+    min-height: 90vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
     background-position: center;
     &--decision {
         background-image: url("./assets/images/static/block-decision.png");
@@ -157,8 +158,9 @@
         width: 100vw;
         min-height: 100vh;
         overflow: scroll;
-        }
+    }
 }
+
 @media (max-width: 600px) {
     .custom-error-container {
         padding: 30px;
@@ -166,7 +168,6 @@
     .internet-main--gov .custom-error-container {
         padding: 30px;
     }
-    
 }
 
 @media (max-width: 550px) {
@@ -233,4 +234,3 @@
         padding: 4px 15px;
     }
 }
-
