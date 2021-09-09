@@ -4,10 +4,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-width: 100vw;
-    min-height: 100vh;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
     background-position: center;
     &--decision {
         background-image: url("./assets/images/static/block-decision.png");
@@ -153,6 +152,13 @@
 }
 
 // Мобильные стили
+@media (max-width: 900px) {
+    .internet-main {
+        width: 100vw;
+        min-height: 100vh;
+        overflow: scroll;
+        }
+}
 @media (max-width: 600px) {
     .custom-error-container {
         padding: 30px;
@@ -160,6 +166,7 @@
     .internet-main--gov .custom-error-container {
         padding: 30px;
     }
+    
 }
 
 @media (max-width: 550px) {
@@ -226,3 +233,4 @@
         padding: 4px 15px;
     }
 }
+
