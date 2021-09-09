@@ -236,7 +236,7 @@
 }
 
 // Desktop adopt
-@media screen and (min-height: 750px) {
+@media screen and (min-height: 750px) and (max-height: 799px) {
     .custom-error-container .custom-error__error-description span {
         font-size: 12px;
     }
@@ -248,13 +248,13 @@
     }
 }
 
-@media screen and (min-height: 800px) {
+@media screen and (min-height: 800px)and (max-height: 899px) {
     .custom-error-container .custom-error__error-description span {
         font-size: 14px;
     }
 }
 
-@media screen and (min-height: 900px) {
+@media screen and (min-height: 900px)and (max-height: 999px) {
     .custom-error-container .custom-error__error-description span {
         font-size: 16px;
     }
