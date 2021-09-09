@@ -1,4 +1,3 @@
-
 // TODO: Полифил для всех ES6 функций JS
 // Production steps of ECMA-262, Edition 5, 15.4.4.18
 // Reference: https://es5.github.io/#x15.4.4.18
@@ -114,7 +113,7 @@ if (document.querySelector(".form-recover-check")) {
 if (document.querySelector(".form-return-login")) {
     var return_form = document.querySelector(".form-return-login");
 }
-if(document.querySelector("#rateSelect")) {
+if (document.querySelector("#rateSelect")) {
     var selectInputField = document.getElementById("rateSelect");
     console.log(selectInputField);
     var selectInputLabel = document.querySelector(".rate-form__label");
@@ -140,8 +139,8 @@ if(document.querySelector("#rateSelect")) {
         selectInputLabel.classList.toggle("js--rotate-arrow");
         selectModalWindow.classList.add("js--hidden");
     });
-
 }
+
 function displaySelectValue() {
     var selectInputField = document.getElementById("rateSelect");
     var allOptionsArray = document.querySelectorAll(".rate-form__option");
@@ -164,152 +163,151 @@ function uncheckEverySpan() {
     });
 }
 
-
-    // Добавление подложки
-    var calendarLabels = document.querySelectorAll(".stats-form__label");
-    var calendarLabelsArray = Array.prototype.slice.call(calendarLabels);
-    console.log(calendarLabelsArray);
-    console.log(calendarLabels);
-    calendarLabels.forEach(function(element) {
+// Добавление подложки
+var calendarLabels = document.querySelectorAll(".stats-form__label");
+var calendarLabelsArray = Array.prototype.slice.call(calendarLabels);
+console.log(calendarLabelsArray);
+console.log(calendarLabels);
+calendarLabelsArray.forEach(function(element) {
+    element.addEventListener("click", function() {
+        var layer = document.querySelector(".calendar-layer");
+        console.log(layer);
+        layer.addEventListener("click", function() {
+            layer.classList.add("js--hidden");
+        });
         element.addEventListener("click", function() {
-            var layer = document.querySelector(".calendar-layer");
-            console.log(layer);
-            layer.addEventListener("click", function() {
-                layer.classList.add("js--hidden");
-            });
-            element.addEventListener("click", function() {
-                layer.classList.remove("js--hidden");
-            });
-            var calendar = document.querySelector(".ui-datepicker");
-            var allLinks = calendar.querySelectorAll("td");
-            var allLinksArray = Array.prototype.slice.call(allLinks);
-            allLinksArray.forEach(function(elem) {
-                if (!elem.classList.contains("ui-datepicker-unselectable")) {
-                    elem.addEventListener("click", function() {
-                        layer.classList.add("js--hidden");
-                    });
-                }
-            });
+            layer.classList.remove("js--hidden");
         });
-    });
-    var calendarInputs = document.querySelectorAll(".form__input-form__input");
-    var calendarInputsArray = Array.prototype.slice.call(calendarInputs);
-    calendarInputsArray.forEach(function(element) {
-        element.addEventListener("mouseenter", function() {
-            var layer = document.querySelector(".calendar-layer");
-            layer.addEventListener("click", function() {
-                layer.classList.add("js--hidden");
-            });
-            element.addEventListener("click", function() {
-                layer.classList.remove("js--hidden");
-            });
-            var calendar = document.querySelector(".ui-datepicker");
-            var allLinks = calendar.querySelectorAll("td");
-            var allLinksArray = Array.prototype.slice.call(allLinks);
-            allLinksArray.forEach(function(elem) {
-                if (!elem.classList.contains("ui-datepicker-unselectable")) {
-                    elem.addEventListener("click", function() {
-                        layer.classList.add("js--hidden");
-                    });
-                }
-            });
-        });
-    }); // Убирание подложки
-    $(function() {
-        $.datepicker.regional["ru"] = {
-            closeText: "Закрыть",
-            prevText: "",
-            nextText: "",
-            currentText: "Сегодня",
-            monthNames: [
-                "Январь",
-                "Февраль",
-                "Март",
-                "Апрель",
-                "Май",
-                "Июнь",
-                "Июль",
-                "Август",
-                "Сентябрь",
-                "Октябрь",
-                "Ноябрь",
-                "Декабрь",
-            ],
-            monthNamesShort: [
-                "Январь",
-                "Февраль",
-                "Март",
-                "Апрель",
-                "Май",
-                "Июнь",
-                "Июль",
-                "Август",
-                "Сентябрь",
-                "Октябрь",
-                "Ноябрь",
-                "Декабрь",
-            ],
-            dayNames: [
-                "воскресенье",
-                "понедельник",
-                "вторник",
-                "среда",
-                "четверг",
-                "пятница",
-                "суббота",
-            ],
-            dayNamesShort: ["вск", "пнд", "втр", "срд", "чтв", "птн", "сбт"],
-            dayNamesMin: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
-            weekHeader: "Нед",
-            dateFormat: "dd.mm.yy",
-            firstDay: 1,
-            isRTL: false,
-            showMonthAfterYear: false,
-            yearSuffix: "",
-        };
-        $.datepicker.setDefaults($.datepicker.regional["ru"]);
-        var dateFormat = "dd.mm.yy",
-            from = $("#paysInputStart")
-            .datepicker({
-                    inline: true,
-                    changeYear: true,
-                    gotoCurrent: true,
-                    dateFormat: "dd.mm.yy",
-                    minDate: 0,
-                    showAnim: "slideDown",
-                    numberOfMonths: 1,
-                },
-                $.datepicker.regional["ru"]
-            )
-            .on("change", function() {
-                $("#paysInputFinish").datepicker("option", "minDate", getDate(this));
-            }),
-            to = $("#paysInputFinish").datepicker({
-                    inline: true,
-                    changeYear: true,
-                    gotoCurrent: true,
-                    dateFormat: "dd.mm.yy",
-                    minDate: 0,
-                    showAnim: "slideDown",
-                    numberOfMonths: 1,
-                },
-                $.datepicker.regional["ru"]
-            );
-
-        function getDate(element) {
-            var date;
-
-            try {
-                date = $.datepicker.parseDate(dateFormat, element.value);
-            } catch (error) {
-                date = null;
-                console.log(date);
+        var calendar = document.querySelector(".ui-datepicker");
+        var allLinks = calendar.querySelectorAll("td");
+        var allLinksArray = Array.prototype.slice.call(allLinks);
+        allLinksArray.forEach(function(elem) {
+            if (!elem.classList.contains("ui-datepicker-unselectable")) {
+                elem.addEventListener("click", function() {
+                    layer.classList.add("js--hidden");
+                });
             }
-
-            return date;
-        }
+        });
     });
- 
+});
+var calendarInputs = document.querySelectorAll(".form__input-form__input");
+var calendarInputsArray = Array.prototype.slice.call(calendarInputs);
+calendarInputsArray.forEach(function(element) {
+    element.addEventListener("mouseenter", function() {
+        var layer = document.querySelector(".calendar-layer");
+        layer.addEventListener("click", function() {
+            layer.classList.add("js--hidden");
+        });
+        element.addEventListener("click", function() {
+            layer.classList.remove("js--hidden");
+        });
+        var calendar = document.querySelector(".ui-datepicker");
+        var allLinks = calendar.querySelectorAll("td");
+        var allLinksArray = Array.prototype.slice.call(allLinks);
+        allLinksArray.forEach(function(elem) {
+            if (!elem.classList.contains("ui-datepicker-unselectable")) {
+                elem.addEventListener("click", function() {
+                    layer.classList.add("js--hidden");
+                });
+            }
+        });
+    });
+}); // Убирание подложки
+$(function() {
+    $.datepicker.regional["ru"] = {
+        closeText: "Закрыть",
+        prevText: "",
+        nextText: "",
+        currentText: "Сегодня",
+        monthNames: [
+            "Январь",
+            "Февраль",
+            "Март",
+            "Апрель",
+            "Май",
+            "Июнь",
+            "Июль",
+            "Август",
+            "Сентябрь",
+            "Октябрь",
+            "Ноябрь",
+            "Декабрь",
+        ],
+        monthNamesShort: [
+            "Январь",
+            "Февраль",
+            "Март",
+            "Апрель",
+            "Май",
+            "Июнь",
+            "Июль",
+            "Август",
+            "Сентябрь",
+            "Октябрь",
+            "Ноябрь",
+            "Декабрь",
+        ],
+        dayNames: [
+            "воскресенье",
+            "понедельник",
+            "вторник",
+            "среда",
+            "четверг",
+            "пятница",
+            "суббота",
+        ],
+        dayNamesShort: ["вск", "пнд", "втр", "срд", "чтв", "птн", "сбт"],
+        dayNamesMin: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+        weekHeader: "Нед",
+        dateFormat: "dd.mm.yy",
+        firstDay: 1,
+        isRTL: false,
+        showMonthAfterYear: false,
+        yearSuffix: "",
+    };
+    $.datepicker.setDefaults($.datepicker.regional["ru"]);
+    var dateFormat = "dd.mm.yy",
+        from = $("#paysInputStart")
+        .datepicker({
+                inline: true,
+                changeYear: true,
+                gotoCurrent: true,
+                dateFormat: "dd.mm.yy",
+                minDate: 0,
+                showAnim: "slideDown",
+                numberOfMonths: 1,
+            },
+            $.datepicker.regional["ru"]
+        )
+        .on("change", function() {
+            $("#paysInputFinish").datepicker("option", "minDate", getDate(this));
+        }),
+        to = $("#paysInputFinish").datepicker({
+                inline: true,
+                changeYear: true,
+                gotoCurrent: true,
+                dateFormat: "dd.mm.yy",
+                minDate: 0,
+                showAnim: "slideDown",
+                numberOfMonths: 1,
+            },
+            $.datepicker.regional["ru"]
+        );
+
+    function getDate(element) {
+        var date;
+
+        try {
+            date = $.datepicker.parseDate(dateFormat, element.value);
+        } catch (error) {
+            date = null;
+            console.log(date);
+        }
+
+        return date;
+    }
+});
+
 // Календарь для блокировки
 
 if (document.getElementById("blockingInputStart")) {
@@ -587,3 +585,37 @@ if (document.getElementById("complexNavItem")) {
 //   watchVisibility: true,
 //   disableOnInteraction: true,
 // });
+if (document.querySelector("#searchResultsCount")) {
+    var result_counter = document.getElementById("searchResultsCount");
+    var allResults = document.querySelectorAll(".search-query-header");
+    var countResults = allResults.length;
+    result_counter.textContent = countResults + " результата";
+}
+
+if (document.querySelector(".search-field")) {
+    var allSearchForms = document.querySelectorAll(".search-form");
+    var allSearchFormsArray = Array.prototype.slice.call(allSearchForms);
+    allSearchFormsArray.forEach(function(element) {
+        element.addEventListener("submit", function(event) {
+            var searchValue = element.querySelector(".search-field").value;
+            if (searchValue == "") {
+                event.preventDefault();
+            } else if (searchValue.length < 5) {
+                event.preventDefault();
+            }
+        });
+    });
+}
+
+function initMainNavigation( container ) {
+
+    // Toggle buttons and submenu items with active children menu items.
+    
+
+    container.find( '#menu-item-216' ).on( 'click', function( e ) {
+        console.log("workeed");
+        container.find( '#menu-item-216 > button' ).toggleClass( 'toggle-on' );
+    container.find( '#menu-item-216 > .sub-menu' ).toggleClass( 'toggled-on' );
+    } );
+}
+initMainNavigation( $( '.main-navigation' ) );

@@ -12,10 +12,10 @@
 
 <section class="no-results not-found">
 	<header class="page-header">
-		<h1 class="page-title"><?php _e( 'Nothing Found', 'twentyfifteen' ); ?></h1>
+		<h1 class="page-title">Поиск</h1>
 	</header><!-- .page-header -->
 
-	<div class="page-content">
+	<div class="page-content search-query">
 
 		<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 
@@ -27,9 +27,9 @@
 			</p>
 
 		<?php elseif ( is_search() ) : ?>
-
-			<p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'twentyfifteen' ); ?></p>
 			<?php get_search_form(); ?>
+			<p class = "search-error">По вашему запросу ничего не было найдено</p>
+			
 
 		<?php else : ?>
 
