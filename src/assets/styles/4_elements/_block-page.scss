@@ -151,24 +151,25 @@
         }
     }
 }
+
 @media (max-width: 1023px) {
     .custom-error-container {
         max-height: fit-content;
     }
     .internet-main {
         height: fit-content;
-        min-height: fit-content;
+        min-height: 100vh;
     }
 }
+
 // Мобильные стили
 @media (max-width: 900px) {
     .internet-main {
         width: 100vw;
-        min-height:  fit-content;
+        min-height: 100vh;
         overflow: scroll;
     }
 }
-
 
 @media (max-width: 600px) {
     .custom-error-container {
@@ -278,5 +279,11 @@
     }
     .custom-error-container {
         max-width: 480px;
+    }
+}
+
+@media screen and (min-width: 1250px) {
+    .custom-error-container .custom-error__error-description span {
+        font-size: 18px !important;
     }
 }
