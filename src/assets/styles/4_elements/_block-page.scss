@@ -155,12 +155,16 @@
     .custom-error-container {
         max-height: fit-content;
     }
+    .internet-main {
+        height: fit-content;
+        min-height: fit-content;
+    }
 }
 // Мобильные стили
 @media (max-width: 900px) {
     .internet-main {
         width: 100vw;
-        min-height: 100vh;
+        min-height:  fit-content;
         overflow: scroll;
     }
 }
