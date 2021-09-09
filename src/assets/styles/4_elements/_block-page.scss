@@ -151,7 +151,11 @@
         }
     }
 }
-
+@media (max-width: 1023px) {
+    .custom-error-container {
+        max-height: fit-content;
+    }
+}
 // Мобильные стили
 @media (max-width: 900px) {
     .internet-main {
@@ -160,6 +164,7 @@
         overflow: scroll;
     }
 }
+
 
 @media (max-width: 600px) {
     .custom-error-container {
@@ -223,7 +228,7 @@
     }
     .custom-error-container .custom-error__error-description span {
         font-size: 10px;
-        line-height: 10px;
+        line-height: 14px;
         margin-bottom: 10px;
     }
     .custom-error-container .custom-error__subheader {
@@ -238,7 +243,7 @@
 // Desktop adopt
 @media screen and (min-height: 750px) and (max-height: 799px) {
     .custom-error-container .custom-error__error-description span {
-        font-size: 12px;
+        font-size: 14px;
     }
     .custom-error-container .custom-error__navigation-link {
         margin-bottom: 30px;
