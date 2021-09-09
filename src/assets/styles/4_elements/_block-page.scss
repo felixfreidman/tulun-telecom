@@ -236,7 +236,7 @@
 }
 
 // Desktop adopt
-@media (min-height: 650px) {
+@media screen and (min-height: 750px) {
     .custom-error-container .custom-error__error-description span {
         font-size: 12px;
     }
@@ -248,19 +248,19 @@
     }
 }
 
-@media (min-height: 800px) {
+@media screen and (min-height: 800px) {
     .custom-error-container .custom-error__error-description span {
         font-size: 14px;
     }
 }
 
-@media (min-height: 900px) {
+@media screen and (min-height: 900px) {
     .custom-error-container .custom-error__error-description span {
         font-size: 16px;
     }
 }
 
-@media (min-height: 1000px) {
+@media screen and (min-height: 1000px) {
     .custom-error-container .custom-error__error-description span {
         font-size: 18px;
     }
