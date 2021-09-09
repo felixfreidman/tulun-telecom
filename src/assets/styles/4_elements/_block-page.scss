@@ -5,9 +5,8 @@
     align-items: center;
     justify-content: center;
     width: 100vw;
-    min-height: 90vh;
-    overflow-x: hidden;
-    overflow-y: scroll;
+    height: 100vh;
+    overflow: hidden;
     background-position: center;
     &--decision {
         background-image: url("./assets/images/static/block-decision.png");
@@ -37,6 +36,7 @@
     border-radius: 20px;
     padding: 60px;
     max-width: 480px;
+    max-height: 90vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -72,7 +72,7 @@
         span {
             text-align: left;
             margin-bottom: 15px;
-            font-size: 12px;
+            font-size: 18px;
             display: inline-block;
             width: 100%;
         }
@@ -232,5 +232,36 @@
     }
     .custom-error-container .custom-error__navigation-link {
         padding: 4px 15px;
+    }
+}
+
+// Desktop adopt
+@media (min-height: 768px) and (min-width:1024px) {
+    .custom-error-container .custom-error__error-description span {
+        font-size: 12px;
+    }
+    .custom-error-container .custom-error__navigation-link {
+        margin-bottom: 30px;
+    }
+}
+
+@media (min-height: 800px) {
+    .custom-error-container .custom-error__error-description span {
+        font-size: 14px;
+    }
+}
+
+@media (min-height: 900px) {
+    .custom-error-container .custom-error__error-description span {
+        font-size: 16px;
+    }
+}
+
+@media (min-height: 1000px) {
+    .custom-error-container .custom-error__error-description span {
+        font-size: 18px;
+    }
+    .custom-error-container .custom-error__navigation-link {
+        margin-bottom: 60px;
     }
 }
