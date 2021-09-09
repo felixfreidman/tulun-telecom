@@ -243,6 +243,9 @@
     .custom-error-container .custom-error__navigation-link {
         margin-bottom: 30px;
     }
+    .custom-error-container {
+        max-width: 630px;
+    }
 }
 
 @media (min-height: 800px) {
